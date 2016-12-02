@@ -1,7 +1,7 @@
 from datetime import datetime
 from os import listdir
 from operator import itemgetter
-
+import os
 
 def get_base():
 	with open("BASE.md", "r") as f:
@@ -33,7 +33,7 @@ def get_post_links():
 					if line.startswith("date="):
 						date = int(line.split("date=")[1].strip())
 
-				post_list.append( ('<h2><img src="../images/{img}" width="100" height="100" \
+				post_list.append( ('<h2><img src="images/{img}" width="100" height="100" \
 				 hspace="10"><a href={url}>{title}</a></h2>\n'.format(img=ftimage, title=title,
 				  url=url), date) )
 
@@ -87,6 +87,16 @@ def add_meta_info_lines(removed_metainfo):
 		with open("./posts/{}".format(fn), "a+") as f:
 			for mi in removed_metainfo[fn]: 
 				f.write(mi)
+
+def add_image_sym_links_to_site_dir():
+	filenames = [fn for fn in listdir("./posts")]
+
+	for fn in filenames:
+		with open("./images/{}".format(fn), "a+") as f:
+			for mi in removed_metainfo[fn]: 
+				os.system("ln -s images/ site/images")
+				f.write(mi)
+
 
 
 if __name__ in '__main__':
