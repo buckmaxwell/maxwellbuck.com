@@ -89,13 +89,7 @@ def add_meta_info_lines(removed_metainfo):
 				f.write(mi)
 
 def add_image_sym_links_to_site_dir():
-	filenames = [fn for fn in listdir("./posts")]
-
-	for fn in filenames:
-		with open("./images/{}".format(fn), "a+") as f:
-			for mi in removed_metainfo[fn]: 
-				os.system("ln -s images/ site/images")
-				f.write(mi)
+	os.system("ln -s images/ site/images")
 
 
 
