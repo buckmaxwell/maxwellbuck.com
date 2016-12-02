@@ -92,7 +92,6 @@ def add_image_sym_links_to_site_dir():
 	os.system("ln -s images/ site/images")
 
 
-
 if __name__ in '__main__':
 	base = get_base()
 	intro = get_intro()
