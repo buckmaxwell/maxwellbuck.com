@@ -33,8 +33,8 @@ def get_post_links():
 					if line.startswith("date="):
 						date = int(line.split("date=")[1].strip())
 
-				post_list.append( ('<p><img src="../images/{img}" width="100" height="100" \
-				 hspace="10"><a href={url}>{title}</a></p>\n'.format(img=ftimage, title=title,
+				post_list.append( ('<h2><img src="../images/{img}" width="100" height="100" \
+				 hspace="10"><a href={url}>{title}</a></h2>\n'.format(img=ftimage, title=title,
 				  url=url), date) )
 
 	post_list.sort(key=itemgetter(1), reverse=True)
