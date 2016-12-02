@@ -106,6 +106,7 @@ if __name__ in '__main__':
 	build_index(base, intro, posts)
 	removed_metainfo = build_posts(base)
 	add_meta_info_lines(removed_metainfo)
+	add_image_sym_links_to_site_dir()
 
 
 
