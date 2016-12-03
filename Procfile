@@ -1,1 +1,1 @@
-web: gunicorn --reload app:site/app --log-file=-
+web: gunicorn --reload site/app:app --log-file=-
