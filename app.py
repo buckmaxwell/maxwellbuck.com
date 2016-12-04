@@ -10,9 +10,11 @@ def is_mobile(user_agent):
 	user_agent = parse(user_agent)
 	return user_agent.is_mobile or user_agent.is_tablet
 
-def return_404():
+def return_404(mobile=False):
 	with open("site/404.html", "r") as f:
 		content = f.read()
+		if mobile:
+			content = make_mobile(content)
 	return content, 404, {'Content-Type':'text/html'}
 
 def make_mobile(content):
@@ -37,7 +39,7 @@ def hello():
 
 		return content, 200, {'Content-Type':'text/html'}
 	except:
-		return return_404()
+		return return_404(is_mobile(request.headers.get('User-Agent')))
 
 
 @app.route("/<filename>.html")
@@ -50,7 +52,7 @@ def hello2(filename):
 				content = make_mobile(content)
 		return content, 200, {'Content-Type':'text/html'}
 	except:
-		return return_404()
+		return return_404(is_mobile(request.headers.get('User-Agent')))
 
 
 @app.route("/images/<filename>")
@@ -61,7 +63,7 @@ def hello3(filename):
 		ext = filename.split('.')[1]
 		return content, 200, {'Content-Type':'image/{}'.format(ext)}
 	except:
-		return return_404()
+		return return_404(is_mobile(request.headers.get('User-Agent')))
 
 @app.route("/<filename>.css")
 def hello4(filename):
@@ -71,7 +73,7 @@ def hello4(filename):
 			content = f.read()
 		return content, 200, {'Content-Type':'text/css'}
 	except:
-		return return_404
+		return return_404(is_mobile(request.headers.get('User-Agent')))
 
 
 @app.route("/<filename>.md")
@@ -82,7 +84,7 @@ def hello5(filename):
 			content = f.read()
 		return content, 200, {'Content-Type':'text/plain'}
 	except:
-		return return_404()
+		return return_404(is_mobile(request.headers.get('User-Agent')))
 
 
 @app.errorhandler(404)
