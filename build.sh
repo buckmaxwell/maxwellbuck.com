@@ -35,3 +35,6 @@ done
 # Build resume
 grip "RESUME.md" --user-content --export --user=buckmaxwell --pass=$1 "site/resume.html"
 
+# Build 404
+grip "404.md" --user-content --export --user=buckmaxwell --pass=$1 "site/404.html"
+
