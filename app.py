@@ -27,7 +27,7 @@ def hello():
 		content = f.read()
 		if is_mobile(request.headers.get('User-Agent')):
 			content = make_mobile(content)
-			
+
 	return content, 200, {'Content-Type':'text/html'}
 
 @app.route("/<filename>.html")
