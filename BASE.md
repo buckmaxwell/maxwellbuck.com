@@ -24,6 +24,8 @@
   <a href='https://www.linkedin.com/pub/max-buck/8b/5b8/a9'>LinkedIn</a>
   •
   <a href='resume.html'>Resume</a>
+  •
+  <a href='https://github.com/buckmaxwell'>GitHub</a>
 </p>
 
 ---
