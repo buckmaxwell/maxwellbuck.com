@@ -89,17 +89,12 @@ def hello5(filename):
 
 @app.errorhandler(404)
 def page_not_found(e):
-	with open("site/404.html", "r") as f:
-		content = f.read()
-	return content, 404, {'Content-Type':'text/html'}
-
+	return return_404(is_mobile(request.headers.get('User-Agent')))
 
 # caused by fake md, html, or image/* file
 @app.errorhandler(500)
 def page_not_found2(e):
-	with open("site/404.html", "r") as f:
-		content = f.read()
-	return content, 404, {'Content-Type':'text/html'}
+	return return_404(is_mobile(request.headers.get('User-Agent')))
 
 
 if __name__ == "__main__":
