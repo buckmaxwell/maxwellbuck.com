@@ -112,7 +112,7 @@ started on that soon, but have a lot of work and school on my plate at the
 moment also. Either way, if you are interested in testing, using, or
 contributing to either of those projects, please let me know. I am very excited
 
-<p align=center><a href=zipcode-magic.html>Next</a></p>
+<p align=center>Prev <> <a href=zipcode-magic.html>Next</a></p>
 
 ---
 

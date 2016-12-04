@@ -59,7 +59,7 @@ let me know, I may continue posting on this topic soon.
 graph that was slightly different. The older version is still available on
 GitHub but is less legible.*
 
-<p align=center><a href=how-many-seasons.html>Prev</a> </p>
+<p align=center><a href=how-many-seasons.html>Prev</a> <> Next</p>
 
 ---
 

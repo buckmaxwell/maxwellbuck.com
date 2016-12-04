@@ -117,8 +117,8 @@ def build_posts(base):
 		with open("./posts/{}".format(fn), "r") as f:
 			body = f.read()
 
-			next_link = ""
-			prev_link = ""
+			next_link = "Next"
+			prev_link = "Prev"
 			if i+1 < len(filenames):
 				print filenames[i+1]
 				next_link = filenames[i+1].lower().split('.')[0] + '.html'
