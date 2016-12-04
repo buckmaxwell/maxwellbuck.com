@@ -15,11 +15,14 @@
 
 # Cool Thoughts Sometimes.
 
-
 Occassional ramblings from me, Max. I am a programmer, poet, and a friendly litt
-le guy from Cleveland.
+le guy from Cleveland.  There are no ads on this site, no popups, no javascript,
+ and no like or share buttons.  Enjoy. 
 
 
+<p align=right>12.04.2016</p><h2><img src="images/fuck-wordpress.jpg" width="100
+" height="100" 				 hspace="10"><a href=whats-with-the-new-blog.html>What's with
+ the new blog?</a></h2>
 <p align=right>11.30.2016</p><h2><img src="images/countries-of-the-world.jpg" wi
 dth="100" height="100" 				 hspace="10"><a href=countries-by-wikipedia.html>I cl
 ustered countries by Wikipedia references - here's what happened</a></h2>
