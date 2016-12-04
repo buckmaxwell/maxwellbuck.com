@@ -50,7 +50,11 @@
                         <div class="comment-content">
                           <div class="edit-comment-hide">
                             <div class="comment-body markdown-body markdown-format js-comment-body" id="grip-content">
-                              <h3><a href="index.html">maxwellbuck.com</a></h3>
+                              <p align="right">
+  <a href="JSON-API-1.md">Raw</a>
+  •
+  <a href="index.html">Home</a>
+</p>
 <h1>Using the Json Api Specification, Part 1</h1>
 <p>If you have experience with more than one API,  you probably have used some APIs that you love and some that you hate.  Reasons to love an API include good documentation, detailed responses, and good error messages.  A good API is often so well organized that a front end developer looking at one or two endpoints could give a near perfect guess at what the others do, just by their names and HTTP methods.</p>
 <p>Problem is, we backend developers like to get creative! With lightweight frameworks like <a href="http://flask.poco.org">Flask</a> and <a href="http://sinatrarb.com">Sinatra</a> whipping up an endpoint is a cake walk.  Couple that with a solid ORM like <a href="http://sqlalchemy.org">SQLAlchemy</a> and suddenly, you have an API that gets the job done...so long as the nutty database guy is in direct communication with the client side devs.</p>
@@ -64,7 +68,15 @@
 <p>Why did I have so much fun?  I embraced the standard.  As I mentioned, my first project to fully comply with the JSON API spec was an API built around a graphing database.  To create my models I used an OGM (object graph mapper -- like an ORM for a graphing database) called <a href="https://github.com/robinedwards/neomodel">NeoModel</a>.  NeoModel is relatively new and I emailed the developers before taking it for a spin.  After a test run, I was impressed.  The way NeoModel works is much like SQLAlchemy: the models all inherit from a shared base class that has a few built in functions.  In NeoModel this base class is called StructuredNode in reference to the nodes of the graphing database.  A tall can of red bull followed by a 45 minute nap spawned a dream that ended up changing the course of the project forever.  I extended the base class creating "SerializableStructuredNode" and added a few methods to the new Base class that created standard JSON responses based on the JSON API spec.  After the grueling process of writing this new powerful base class, the rest of that API was done in no time.  All that it required was the endpoints themselves -- a significantly easier task than writing cypher (think SQL for neo4j) for 24 endpoints.</p>
 <p>Even better?  The clients that will use that API don't need documentation.  Using the correct HTTP verb, and the correct resource name, they can find any type of node in my database, it's attributes, and it's relationships to other attributes.  They can even request that those related resources be individually included in the response because they would rather not send a separate query for them later.  If they have any questions I'll send them right to jsonapi.org. It's kick ass.</p>
 <p>So you are wondering about my magic class.  Yea, it's dope.  I haven't yet published it on <a href="https://github.com/buckmaxwell">GitHub</a> or the pip repository because I want to allow a bit more time to work out the kinks, at some point I will though, and I plan to keep you updated on the progress of that here.  Secondly, I'd like to write a similar base class for SQLAlchemy.  I am getting started on that soon, but have a lot of work and school on my plate at the moment also.  Either way, if you are interested in testing, using, or contributing to either of those projects, please let me know.  I am very excited about this well thought out and widely applicable standard. Ω</p>
-<h4>(c) 2016 Max Buck</h4>
+<p align="center"><a href="zipcode-magic.html">Next</a></p>
+<hr>
+<p align="center">
+  <a href="https://www.linkedin.com/pub/max-buck/8b/5b8/a9">LinkedIn</a>
+  •
+  <a href="resume.html">Resume</a>
+</p>
+<hr>
+<p>(c) 2016 <a href="mailto:maxbuckdeveloper@gmail.com">maxbuckdeveloper@gmail.com</a></p>
                             </div>
                           </div>
                         </div>

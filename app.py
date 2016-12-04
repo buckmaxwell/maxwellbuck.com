@@ -27,8 +27,8 @@ def hello():
 		content = f.read()
 		if is_mobile(request.headers.get('User-Agent')):
 			content = make_mobile(content)
-
-	return content
+			
+	return content, 200, {'Content-Type':'text/html'}
 
 @app.route("/<filename>.html")
 def hello2(filename):
@@ -37,21 +37,31 @@ def hello2(filename):
 		content = f.read()
 		if is_mobile(request.headers.get('User-Agent')):
 			content = make_mobile(content)
-	return content
+	return content, 200, {'Content-Type':'text/html'}
 
 
 @app.route("/images/<filename>")
 def hello3(filename):
 	with open("site/images/{}".format(filename), "r") as f:
 		content = f.read()
-	return content
+	ext = filename.split('.')[1]
+	return content, 200, {'Content-Type':'image/{}'.format(ext)}
 
 @app.route("/<filename>.css")
 def hello4(filename):
 	filename = filename + ".css"
 	with open("site/{}".format(filename), "r") as f:
 		content = f.read()
-	return content
+	return content, 200, {'Content-Type':'text/css'}
+
+
+@app.route("/<filename>.md")
+def hello5(filename):
+	filename = filename + ".md"
+	with open("site/{}".format(filename), "r") as f:
+		content = f.read()
+	return content, 200, {'Content-Type':'text/plain'}
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=10200, debug=True)
