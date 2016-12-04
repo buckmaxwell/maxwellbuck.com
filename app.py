@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 def is_mobile(user_agent):
 	user_agent = parse(user_agent)
-	return user_agent.is_mobile or user_agent.is_tablet
+	#return user_agent.is_mobile or user_agent.is_tablet
+	return True
 
 def make_mobile(content):
 	with open('site/mobile-header.html', "r") as f:
