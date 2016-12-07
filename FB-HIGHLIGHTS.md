@@ -1,3 +1,8 @@
+
+<p align=right>
+  <a href='index.html'>Home</a>
+</p>
+
 # Facebook Highlights
 This page aggregates public and private posts I've made on Facebook that got over 25 likes.  Some posts are old and I might not necessarly agree with them anymore. All the same, here they are.## 2016-12-06
 Today was the last day of class for one of my CSE classes.  A minute before the final bell my teacher asked if he could "try something".  He then went around the room umming, hmming, and ultimately mispronouncing or failing to recollect the names of each of my classmates.
@@ -286,3 +291,20 @@ Just pulled my buck id keycard out to get into my home. How silly of me.
 ## 2013-02-04
 I just noticed the kid behind me in class is watching my computer screen, so I've decided to pull up some pretty weird stuff in the browser to make his day more exciting.
 
+
+---
+
+<p align=center>
+  <a href='https://www.linkedin.com/pub/max-buck/8b/5b8/a9'>LinkedIn</a>
+  •
+  <a href='resume.html'>Resume</a>
+  •
+  <a href='https://github.com/buckmaxwell'>GitHub</a>
+  •
+  <a href='fb-highlights.html'>Facebook Highlights</a>
+
+</p>
+
+---
+
+(c) 2016 maxbuckdeveloper@gmail.com
