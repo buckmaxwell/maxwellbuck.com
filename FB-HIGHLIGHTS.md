@@ -4,7 +4,9 @@
 </p>
 
 # Facebook Highlights
-This page aggregates public and private posts I've made on Facebook that got over 25 likes.  Some posts are old and I might not necessarly agree with them anymore. All the same, here they are.## 2016-12-06
+This page aggregates public and private posts I've made on Facebook that got over 25 likes.  Some posts are old and I might not necessarly agree with them anymore. All the same, here they are.
+
+## 2016-12-06
 Today was the last day of class for one of my CSE classes.  A minute before the final bell my teacher asked if he could "try something".  He then went around the room umming, hmming, and ultimately mispronouncing or failing to recollect the names of each of my classmates.
 
 Some of my favorite interactions?
