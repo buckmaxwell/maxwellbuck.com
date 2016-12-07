@@ -26,6 +26,9 @@
   <a href='resume.html'>Resume</a>
   •
   <a href='https://github.com/buckmaxwell'>GitHub</a>
+  •
+  <a href='fb-highlights.html'>Facebook Highlights</a>
+
 </p>
 
 ---

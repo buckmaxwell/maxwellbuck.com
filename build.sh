@@ -38,3 +38,8 @@ grip "RESUME.md" --user-content --export --user=buckmaxwell --pass=$1 "site/resu
 # Build 404
 grip "404.md" --user-content --export --user=buckmaxwell --pass=$1 "site/404.html"
 
+
+# Build Facebook Highlights
+grip "FB-HIGHLIGHTS.md" --user-content --export --user=buckmaxwell --pass=$1 "site/fb-highlights.html"
+
+
