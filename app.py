@@ -15,7 +15,7 @@ import os
 app = Flask(__name__)
 
 # Constants
-COOKIE_NAME = 'Max_Buck_is_dope'
+COOKIE_NAME = 'ooh_so_tasty'
 utc=pytz.UTC
 FUTURE = 'Wed, 01 Jan 2116 20:43:10 GMT' # too far in future
 #FUTURE = 'Fri, 01 Jan 2038 20:43:10 GMT' # hopefully not too far

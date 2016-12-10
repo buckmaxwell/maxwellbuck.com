@@ -17,7 +17,8 @@
 
 Occassional ramblings from me, Max. I am a programmer, poet, and a friendly litt
 le guy from Cleveland.  There are no ads on this site, no popups, no javascript,
- and no like or share buttons.  Enjoy. 
+ and no like or share buttons.  There is however one little cookie that I hope y
+ou'll indulge in. Enjoy. 
 
 
 <p align=right>12.04.2016</p><h2><img src="images/fuck-wordpress.jpg" width="100
