@@ -18,8 +18,8 @@ app = Flask(__name__)
 COOKIE_NAME = 'Max_Buck_is_dope'
 utc=pytz.UTC
 FUTURE = 'Wed, 01 Jan 2116 20:43:10 GMT' # too far in future
-FUTURE = 'Fri, 01 Jan 2038 20:43:10 GMT' # hopefully not too far
-FUTURE = 'Mon, 13 Aug 2018 20:43:10 GMT' # one more try?
+#FUTURE = 'Fri, 01 Jan 2038 20:43:10 GMT' # hopefully not too far
+#FUTURE = 'Mon, 13 Aug 2018 20:43:10 GMT' # one more try?
 
 def get_connection():
     # create psycopg2 connection
