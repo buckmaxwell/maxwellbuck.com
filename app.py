@@ -3,13 +3,14 @@ from flask import request
 from user_agents import parse
 from flask import render_template
 from names import get_first_name as gfn
-from names import get_last_name as gfn
+from names import get_last_name as gln
+from random import randint as ri
 from uuid import uuid4
 import pytz
 import datetime
 import psycopg2
 import urlparse
-
+import os
 
 app = Flask(__name__)
 
@@ -86,14 +87,14 @@ def create_event(headers, cookies, page):
 	if username:
 		# See if user exists (part 2)
 		cur.execute("SELECT username from users WHERE username=%s", (username, ))
-	    try:
-	        username = cur.fetchone()[0]
-	    except:
-	        username = None
+		try:
+			username = cur.fetchone()[0]
+		except:
+			username = None
 
 	# Create user if not
 	if not username:
-		username = create_user()
+		username = create_user(headers)
 		created_user = True
 
 	# Collect event info
