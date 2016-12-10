@@ -145,7 +145,7 @@ def hello():
 		u = create_event(request.headers, request.cookies, 'index.html')
 		headers = {'Content-Type':'text/html'}
 		if u:
-			headers['Set-Cookie'] = "{}={}; {}".format(COOKIE_NAME, u, FUTURE)
+			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
@@ -163,7 +163,7 @@ def hello2(filename):
 		u = create_event(request.headers, request.cookies, filename)
 		headers = {'Content-Type':'text/html'}
 		if u:
-			headers['Set-Cookie'] = "{}={}; {}".format(COOKIE_NAME, u, FUTURE)
+			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
@@ -179,7 +179,7 @@ def hello3(filename):
 		u = create_event(request.headers, request.cookies, filename)
 		headers = {'Content-Type':'image/{}'.format(ext)}
 		if u:
-			headers['Set-Cookie'] = "{}={}; {}".format(COOKIE_NAME, u, FUTURE)
+			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
@@ -194,7 +194,7 @@ def hello4(filename):
 		u = create_event(request.headers, request.cookies, filename)
 		headers = {'Content-Type':'text/css'}
 		if u:
-			headers['Set-Cookie'] = "{}={}; {}".format(COOKIE_NAME, u, FUTURE)
+			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
@@ -210,7 +210,7 @@ def hello5(filename):
 		u = create_event(request.headers, request.cookies, filename)
 		headers = {'Content-Type':'text/plain'}
 		if u:
-			headers['Set-Cookie'] = "{}={}; {}".format(COOKIE_NAME, u, FUTURE)
+			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
