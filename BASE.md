@@ -2,7 +2,8 @@
 
 
 <p align=right>
-  
+  <a href='maxwellbuck.pub'>PGP</a>
+  •
   <a href='fb-highlights.html'>Thoughts</a>
   •
   <a href={raw}>Raw</a>

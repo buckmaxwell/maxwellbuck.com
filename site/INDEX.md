@@ -1,12 +1,10 @@
 
 
 
-<p align=justify>
-  <a href='https://github.com/buckmaxwell'>GitHub</a>
+<p align=right>
+  <a href='maxwellbuck.pub'>PGP</a>
   •
-  <a href='resume.html'>Resume</a>
-  •
-  <a href='fb-highlights.html'>Facebook Highlights</a>
+  <a href='fb-highlights.html'>Thoughts</a>
   •
   <a href=INDEX.md>Raw</a>
   •
