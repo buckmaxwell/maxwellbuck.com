@@ -39,7 +39,7 @@ sh support and screen resolution'.  While this may sound cool, as a site manager
 , it's actually not that interesting to me what the screen resolution of my aver
 age client is...
 
-![Cool metrics bro.](cool-story.jpg)
+![Cool metrics bro.](images/cool-story.jpg)
 
 
 ## How I cut out GA and still have all the metrics I need
@@ -62,7 +62,7 @@ friendly dashboards (even one's that we should admit don't tell us all that much
 ) are nice.  My next step will be to build a killer dashboard for my site.  When
  I do, I'll let you know.
 
-![Such beauty, much wow](doge-wow.jpg)
+![Such beauty, much wow](images/doge-wow.jpg)
 
 ## So how exactly are you tracking me?
 
