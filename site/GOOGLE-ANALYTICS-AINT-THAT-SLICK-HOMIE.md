@@ -13,6 +13,7 @@ s, not to mention an extra HTTP request being made for *every single page* on my
 
 ![Sorry Google, you're creeping me out...](images/Google-Big-Brother.png)
 
+
 ## What I liked about GA
 
 There is a few things I like about GA.  It can tell me 
@@ -63,6 +64,7 @@ friendly dashboards (even one's that we should admit don't tell us all that much
  I do, I'll let you know.
 
 ![Such beauty, much wow](images/doge-wow.jpg)
+
 
 ## So how exactly are you tracking me?
 

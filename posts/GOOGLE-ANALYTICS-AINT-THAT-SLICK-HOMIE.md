@@ -5,6 +5,7 @@ If you love Google Analytics great. I've used it plenty and have only recently g
 
 ![Sorry Google, you're creeping me out...](images/Google-Big-Brother.png)
 
+
 ## What I liked about GA
 
 There is a few things I like about GA.  It can tell me 
@@ -30,6 +31,7 @@ The 5th question can be answered with a simple long lasting session cookie. The 
 So if these metrics can be obtained without running 3rd party code on a site, why does everyone do it?  I believe it's the pretty graphs and charts.  Nice user friendly dashboards (even one's that we should admit don't tell us all that much) are nice.  My next step will be to build a killer dashboard for my site.  When I do, I'll let you know.
 
 ![Such beauty, much wow](images/doge-wow.jpg)
+
 
 ## So how exactly are you tracking me?
 

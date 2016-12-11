@@ -1,13 +1,19 @@
 
 
 
-<p align=right>
-  <a href=INDEX.md>Raw</a>
-  •
-  <a href='index.html'>Home</a>
-</p>
 
 
+<div align=right class="dropdown">
+  <span>Menu</span>
+  <div class="dropdown-content">
+    <a href='index.html'>Home</a>
+    <a href='fb-highlights.html'>Facebook Highlights</a>
+    <a href='resume.html'>Resume</a>
+    <a href='https://github.com/buckmaxwell'>GitHub</a>
+    <a href='https://www.linkedin.com/pub/max-buck/8b/5b8/a9'>LinkedIn</a>
+    <a href=INDEX.md>Raw Version</a>
+  </div>
+</div>
 
 
 
@@ -45,8 +51,6 @@ agic</a></h2>
 <p align=right>09.10.2015</p><h2><img src="images/jsonapiftimage.png" width="100
 " height="100" 				 hspace="10"><a href=json-api-1.html>Using the Json Api Speci
 fication, Part 1</a></h2>
-
-
 
 
 
