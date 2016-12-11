@@ -41,8 +41,8 @@ Set-Cookie: ooh_so_tasty=PhyllisBeverlySealPage9120; Expires=Wed, 01 Jan 2116 23
 
 If you haven't set your browser to do differently, it will remember this cookie is associated with my site, and pass it along with every request to my site for the next 100 years (when the cookie will finally expire).  I will keep a record of you, PhyllisBeverlySealPage9120, and with it store information about you -- your ip address, User-Agent, and whether or not you are on a mobile device.  I will also store each 'event' you engage in. This will include the page name, time fetched, and referral page.  Using this information, I can create effective visualizations of traffic on my network, whilst allowing my guests to remain personally anonymous.  As always, feel free to look at the [code for my website](https://github.com/buckmaxwell/maxwellbuck.com), and please write me with your comments and critiques.
 
+
+
+
 date=20161210
 ftimage=Google-Big-Brother.png
-
-
-
