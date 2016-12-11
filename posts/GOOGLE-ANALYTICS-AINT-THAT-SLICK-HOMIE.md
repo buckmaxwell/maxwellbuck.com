@@ -3,7 +3,7 @@
 
 If you love Google Analytics great. I've used it plenty and have only recently gone ahead and cut it out of my site as I wander down the path of technical minimalism.  Keep in mind I still track my users, but the things I actually cared about in GA were so simple to gather on my own that a self-built version had very little technical overhead (think 2.5 hour time investment) and allowed me to cut *Google's prying eyes* out of the picture while sparing my users from having to run JavaScript and fill their browsers with an absolutely goofy amount of cookies, not to mention an extra HTTP request being made for *every single page* on my website.
 
-![Sorry Google, you're creeping me out...](/images/Google-Big-Brother.png)
+![Sorry Google, you're creeping me out...](images/Google-Big-Brother.png)
 
 ## What I liked about GA
 
