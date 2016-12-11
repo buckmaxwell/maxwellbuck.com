@@ -1,19 +1,20 @@
 
 
 
+<p align=justify>
+  <a href='https://github.com/buckmaxwell'>GitHub</a>
+  •
+  <a href='resume.html'>Resume</a>
+  •
+  <a href='fb-highlights.html'>Facebook Highlights</a>
+  •
+  <a href=INDEX.md>Raw</a>
+  •
+  <a href='index.html'>Home</a>
+  
+</p>
 
 
-<div align=right class="dropdown">
-  <span>Menu</span>
-  <div class="dropdown-content">
-    <a href='index.html'>Home</a>
-    <a href='fb-highlights.html'>Facebook Highlights</a>
-    <a href='resume.html'>Resume</a>
-    <a href='https://github.com/buckmaxwell'>GitHub</a>
-    <a href='https://www.linkedin.com/pub/max-buck/8b/5b8/a9'>LinkedIn</a>
-    <a href=INDEX.md>Raw Version</a>
-  </div>
-</div>
 
 
 
@@ -55,6 +56,8 @@ fication, Part 1</a></h2>
 
 
 
+
+
 ---
 
 <p align=center>
@@ -63,8 +66,6 @@ fication, Part 1</a></h2>
   <a href='resume.html'>Resume</a>
   •
   <a href='https://github.com/buckmaxwell'>GitHub</a>
-  •
-  <a href='fb-highlights.html'>Facebook Highlights</a>
 
 </p>
 
