@@ -1,12 +1,9 @@
 
 
 
-<p align=justify>
-  <a href='https://github.com/buckmaxwell'>GitHub</a>
-  •
-  <a href='resume.html'>Resume</a>
-  •
-  <a href='fb-highlights.html'>Facebook Highlights</a>
+<p align=right>
+  
+  <a href='fb-highlights.html'>Thoughts</a>
   •
   <a href={raw}>Raw</a>
   •

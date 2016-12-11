@@ -217,6 +217,22 @@ def hello5(filename):
 		return return_404(is_mobile(request.headers.get('User-Agent')))
 
 
+@app.route("/<filename>.pub")
+def hello6(filename):
+	try:
+		filename = filename + ".pub"
+		with open("site/{}".format(filename), "r") as f:
+			content = f.read()
+
+		u = create_event(request.headers, request.cookies, filename)
+		headers = {'Content-Type':"application/x-pem-file"}
+		if u:
+			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
+		return content, 200, headers
+	except:
+		return return_404(is_mobile(request.headers.get('User-Agent')))
+
+
 @app.errorhandler(404)
 def page_not_found(e):
 	return return_404(is_mobile(request.headers.get('User-Agent')))
