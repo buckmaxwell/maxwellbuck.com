@@ -18,7 +18,7 @@ There is a few things I like about GA.  It can tell me
 
 Depending on the type of sites you run, you may care about different things than I do, but I believe that these metrics tend to be the most useful regardless of site purpose and discipline.  It should be mentioned that other metrics can be derivied from this information.  A cursory read of [this Google Analytics page](https://developers.google.com/analytics/resources/concepts/gaConceptsTrackingOverview) will show you that Google's code is not really doing that much.  The JavaScript code that Google Analytics uses is not what gathers information about referrals, or IP addresses, and it's not what Google uses to determine whether the visitor is a new or returning visitor.  Google makes it clear that the JavaScript running on the page is gathering extra information from 'the DOM [which] provides access to more detailed browser and system information, such as Java and Flash support and screen resolution'.  While this may sound cool, as a site manager, it's actually not that interesting to me what the screen resolution of my average client is...
 
-![Cool metrics bro.](cool-story.jpg)
+![Cool metrics bro.](images/cool-story.jpg)
 
 
 ## How I cut out GA and still have all the metrics I need
@@ -29,7 +29,7 @@ The 5th question can be answered with a simple long lasting session cookie. The 
 
 So if these metrics can be obtained without running 3rd party code on a site, why does everyone do it?  I believe it's the pretty graphs and charts.  Nice user friendly dashboards (even one's that we should admit don't tell us all that much) are nice.  My next step will be to build a killer dashboard for my site.  When I do, I'll let you know.
 
-![Such beauty, much wow](doge-wow.jpg)
+![Such beauty, much wow](images/doge-wow.jpg)
 
 ## So how exactly are you tracking me?
 
