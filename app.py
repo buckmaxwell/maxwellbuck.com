@@ -139,10 +139,10 @@ def make_mobile(content):
 def hello():
 	try:
 		with open("site/index.html", "r") as f:
+
 			content = f.read()
 			if is_mobile(request.headers.get('User-Agent')):
 				content = make_mobile(content)
-
 		u = create_event(request.headers, request.cookies, 'index.html')
 		headers = {'Content-Type':'text/html'}
 		if u:

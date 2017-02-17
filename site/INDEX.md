@@ -26,6 +26,10 @@ le guy from Cleveland.  There are no ads on this site, no popups, no javascript,
 ou'll indulge in. Enjoy. 
 
 
+<p align=right>02.16.2017</p><h2><img src="images/YellowJournalism.gif" width="1
+00" height="100" 				 hspace="10"><a href=yellow-journalism-still-a-problem.html
+>An admission that lefty yellow journalism does exist, with the Washington Post 
+as a great example. [Editorial]  </a></h2>
 <p align=right>12.10.2016</p><h2><img src="images/Google-Big-Brother.png" width=
 "100" height="100" 				 hspace="10"><a href=google-analytics-aint-that-slick-hom
 ie.html>Is Google Analytics really that slick?</a></h2>
@@ -69,4 +73,4 @@ fication, Part 1</a></h2>
 
 ---
 
-(c) 2016 maxbuckdeveloper@gmail.com
+(c) 2017 maxbuckdeveloper@gmail.com
