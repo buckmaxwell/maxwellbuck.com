@@ -139,16 +139,19 @@ def make_mobile(content):
 def hello():
 	try:
 		with open("site/index.html", "r") as f:
-
 			content = f.read()
-			if is_mobile(request.headers.get('User-Agent')):
-				content = make_mobile(content)
-		u = create_event(request.headers, request.cookies, 'index.html')
+			try:
+				if is_mobile(request.headers.get('User-Agent')):
+					content = make_mobile(content)
+			except:
+				pass
+		#u = create_event(request.headers, request.cookies, 'index.html')
 		headers = {'Content-Type':'text/html'}
-		if u:
-			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
+		#if u:
+		#	headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
-	except:
+	except Exception as e:
+		print e
 		return return_404(is_mobile(request.headers.get('User-Agent')))
 
 
@@ -161,10 +164,10 @@ def hello2(filename):
 			if is_mobile(request.headers.get('User-Agent')):
 				content = make_mobile(content)
 		
-		u = create_event(request.headers, request.cookies, filename)
+		#u = create_event(request.headers, request.cookies, filename)
 		headers = {'Content-Type':'text/html'}
-		if u:
-			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
+		#if u:
+		#	headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
@@ -177,10 +180,10 @@ def hello3(filename):
 			content = f.read()
 		ext = filename.split('.')[1]
 
-		u = create_event(request.headers, request.cookies, filename)
+		#u = create_event(request.headers, request.cookies, filename)
 		headers = {'Content-Type':'image/{}'.format(ext)}
-		if u:
-			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
+		#if u:
+		#	headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
@@ -192,10 +195,10 @@ def hello4(filename):
 		with open("site/{}".format(filename), "r") as f:
 			content = f.read()
 
-		u = create_event(request.headers, request.cookies, filename)
+		#u = create_event(request.headers, request.cookies, filename)
 		headers = {'Content-Type':'text/css'}
-		if u:
-			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
+		#if u:
+		#	headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
@@ -208,10 +211,10 @@ def hello5(filename):
 		with open("site/{}".format(filename), "r") as f:
 			content = f.read()
 
-		u = create_event(request.headers, request.cookies, filename)
+		#u = create_event(request.headers, request.cookies, filename)
 		headers = {'Content-Type':'text/plain'}
-		if u:
-			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
+		#if u:
+		#	headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
@@ -224,10 +227,10 @@ def hello6(filename):
 		with open("site/{}".format(filename), "r") as f:
 			content = f.read()
 
-		u = create_event(request.headers, request.cookies, filename)
+		#u = create_event(request.headers, request.cookies, filename)
 		headers = {'Content-Type':"application/x-pem-file"}
-		if u:
-			headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
+		#if u:
+		#	headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
 		return content, 200, headers
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
