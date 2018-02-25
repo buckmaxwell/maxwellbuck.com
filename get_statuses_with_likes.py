@@ -4,9 +4,9 @@ import json
 
 image_types = ['.gif', '.png', '.jpg', '.jpeg'] 
 MIN_LIKES = 25
-start_link = "https://graph.facebook.com/v2.8/me?fields=id%2Cname%2Cposts%7Breactions.limit(25)%2Cmessage%2Ccreated_time%7D&access_token=EAACEdEose0cBAEdySgAuL9060JmYYmyZBlpA9YAU5bMuymYezsmF8s1WNZCmMElm28Q4WkZBzEgN3BZBwZBloxLiOfRs2ApEZCIMnzwl7j8IBXgUC5BHVmVUdYfrOhdmDEWFEXFhXM11NH3La2X8gKohqjHtEGH4saYoB5PZAyVegZDZD"
+start_link="https://graph.facebook.com/v2.8/me?fields=id%2Cname%2Cposts%7Breactions.limit(25)%2Cmessage%2Ccreated_time%7D&access_token=EAACEdEose0cBAEAgm6yubvrZAUxR4ZAwnbFs510dGIVkLcWZABSJuNDK19YZAZAmtYlOnjzyGDf4mu31ZBMheNt1honYaSXBZCk9JI6ZBkxbA9ZALW2SJkxOCOQmgzUa6toXokDPVVritcSk1RgVXhRFCrnQl8p78JZAbZC2CHYttoOZAGvr2IXbVIYjz2BHesyYlKUZD"
 
-start_link =  "https://graph.facebook.com/v2.8/me?fields=posts%7Bmessage%2Cfull_picture%2Creactions.limit(25)%2Ccreated_time%7D&access_token=EAACEdEose0cBAFpWyhYIoGaQuGjmh8tYcVLOUJ9X3ZAZBYH9nlZAJKj5dN0bhqWUWG8JqnrBXGowFazgDGMEnZBObhPZALaUHHH7mlZB6sVNsJESWot70mZBpouqQEHnUzBoRVyOdHg7gx102fhUvACqR5rHVxLmnj2Ms9BWTZBFCQZDZD"
+start_link="https://graph.facebook.com/v2.8/me?fields=posts%7Bmessage%2Cfull_picture%2Creactions.limit(25)%2Ccreated_time%7D&access_token=EAACEdEose0cBAEAgm6yubvrZAUxR4ZAwnbFs510dGIVkLcWZABSJuNDK19YZAZAmtYlOnjzyGDf4mu31ZBMheNt1honYaSXBZCk9JI6ZBkxbA9ZALW2SJkxOCOQmgzUa6toXokDPVVritcSk1RgVXhRFCrnQl8p78JZAbZC2CHYttoOZAGvr2IXbVIYjz2BHesyYlKUZD"
 
 with open('FB-HIGHLIGHTS2.md', 'w+') as f:
 

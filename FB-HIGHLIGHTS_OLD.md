@@ -1,47 +1,10 @@
+
+<p align=right>
+  <a href='index.html'>Home</a>
+</p>
+
 # Facebook Highlights
-This page aggregates public and private posts I've made on Facebook that got over 25 likes.  Some posts are old and I might not necessarly agree with them anymore. All the same, here they are.## 2017-06-01
-Hot takes on the Trump "Beheading"
-
-1. Where are the free speech advocates now?  Ya'll righties are some snowflakes.
-
-2. Remember that time when POTUS called up a known mass murderer in the Philipines and congratulated him on murdering 9,000+ people?
-
-3. Remember how the first country Trump visited was Saudi Arabia?  And how he made a weapons deal with them?  Yea, the Saudi's.  That country that beheads more people than ISIS.
-
-4. Remember  when he was like, “Saudi Arabia’s Vision for 2030 is an important and encouraging statement of tolerance, respect, and empowering women...” You would never have known that women in the Kingdom still can’t drive.
-
-5. Yo, yo - Central Park Five???  Literally he encouraged the murder of 5 innocent boys (oldest was 16.  2 were 14).
-
-6. Oh, oh and when he was like "rough him up" at a rally, "I'll cover your legal fees."  And then how there was a wave of hate crimes after his election... 
-
-Yeaaa, I'm gonna go with: sorry bruh, you kinda had it coming, shake it off snowflake.
-
-## 2017-05-09
-Since everybody is proudly announcing graduating,  I feel like proudly announcing that I graduated 6 months ago.  There you go.  It's been proudly announced.
-
-## 2017-03-08
-![](https://scontent.xx.fbcdn.net/v/t1.0-9/s720x720/17156178_10210800274194451_4934524980758341904_n.jpg?oh=2ce792637014756155a50106743e0e29&oe=5B0E236D)
-CIA potato with a fully evolved eye is watching you.
-
-## 2017-02-03
-Waking up thinking about how Frederick Douglass has done an amazing job.
-
-## 2017-02-02
-Hi guys -  If you want to participate in #boycotttrump  but aren't sure which companies are being boycotted text the name of the company to 614.763.6678. I built a thing that will text you back info about the company
-
-## 2016-12-13
-Bout to take my last final ever.  Don't worry, I brought enough party hats for the whole class.
-
-## 2016-12-09
-Wanna hear something trippy?
-
-According to the Ohio Revised Code (the cool kids call it the ORC), a person is dead if they have no heart function OR no brain function.
-
-According to the Heartbeat Bill*  a fetus is alive if it has a beating heart.
-
-Did they forget that someone who has no brain function is dead according to the other Ohio laws?  Maybe it's a Schroedinger thing. The fetus is alive AND dead.
-
-*a refugee of the US constitution that Ohio has chosen to harbor
+This page aggregates public and private posts I've made on Facebook that got over 25 likes.  Some posts are old and I might not necessarly agree with them anymore. All the same, here they are.
 
 ## 2016-12-06
 Today was the last day of class for one of my CSE classes.  A minute before the final bell my teacher asked if he could "try something".  He then went around the room umming, hmming, and ultimately mispronouncing or failing to recollect the names of each of my classmates.
@@ -198,7 +161,7 @@ Laws and policies change when hearts change.
 Bend over backward for another human being today.
 
 ## 2015-11-12
-![](https://scontent.xx.fbcdn.net/v/t1.0-9/12247053_10206810336528503_4894604813696220879_n.jpg?oh=d3510d042181a8fa81947327396f6f18&oe=5B1B6DA5)
+![](https://scontent.xx.fbcdn.net/v/t1.0-9/12247053_10206810336528503_4894604813696220879_n.jpg?oh=843410c6dec0dd731f1ebf931f92f883&oe=58F1B7A5)
 On Tuesday night I went to the OSU poetry Grand Slam to compete for a spot on the 2016 OSU poetry team, who will be competing in Austin Texas this year.  
 
 The slam was kickass, with a lot of really well put together poetry, and to make it even better, a great number of good friends showed up to cheer me on, despite me letting them know only a few hours before.
@@ -227,7 +190,7 @@ If you choose to argue back that I couldn't dream the color green without seeing
 Happy Monday team.
 
 ## 2015-08-06
-![](https://scontent.xx.fbcdn.net/v/t31.0-8/q87/s720x720/11011895_10206205340523981_2598585372369297786_o.jpg?oh=e51db4d059f06f2dd24b90893e696d1d&oe=5B18458B)
+![](https://scontent.xx.fbcdn.net/v/t1.0-9/q87/s720x720/11800458_10206205340523981_2598585372369297786_n.jpg?oh=d0a1c400137c5090d0ad67c100ed9fed&oe=58F423C3)
 This guy. I met Jelly Bean a year and a half ago shortly after he moved from Chicago.  I told him I was in the mood for some summer adventure and he told me he'd do a few victory laps with me.  He was a little over 174,000 then.  Today, he turned 185,000.  
 
 To celebrate we did a trip down to Pittsburgh to see Anna5 and some other cool poets.  It was a gorgeous drive down I-70/76 and because Julia and Sydney decided to take advantage of the AC offered in Anna Wiese's car, Jelly and I got some bro time.  4 hours later we arrived in Pittsburgh, he a little older, me with windblown hair and one very red driver's side arm.  I had a blast hanging out with my friends and got to do some really great stuff.  The highlight was a poetry session in the biggest fountain in North America, but drag brunch was a close second.
@@ -303,7 +266,7 @@ Just saw age of Ultron. Glad they saved the world. Think they could have done it
 It's been a very noteworthy week.  I spent a great chunk of it in Richmond Virginia at VCU with the Ohio State Slam Poetry Squad.   Really proud of my whole team. We performed our poems really well, and got to bump shoulders with writers from all over the states and a few from Toronto.  Lot's of great new people and a few old friends too.  Thanks a lot friends for all the support.  Poetry is the best.
 
 ## 2015-02-19
-![](https://scontent.xx.fbcdn.net/v/t31.0-0/p180x540/10498052_10205001566230376_9112843723389565314_o.jpg?oh=a82accbe60a449572d84bc9d54ba0349&oe=5B0A245C)
+![](https://scontent.xx.fbcdn.net/v/t1.0-0/p180x540/10440920_10205001566230376_9112843723389565314_n.jpg?oh=797b1ab6bc758a11860e89360906e383&oe=58F91CDB)
 Students looking for degrees. Ain't none out here.
 
 ## 2014-11-19
@@ -330,3 +293,20 @@ Just pulled my buck id keycard out to get into my home. How silly of me.
 ## 2013-02-04
 I just noticed the kid behind me in class is watching my computer screen, so I've decided to pull up some pretty weird stuff in the browser to make his day more exciting.
 
+
+---
+
+<p align=center>
+  <a href='https://www.linkedin.com/pub/max-buck/8b/5b8/a9'>LinkedIn</a>
+  •
+  <a href='resume.html'>Resume</a>
+  •
+  <a href='https://github.com/buckmaxwell'>GitHub</a>
+  •
+  <a href='fb-highlights.html'>Facebook Highlights</a>
+
+</p>
+
+---
+
+(c) 2016 maxbuckdeveloper@gmail.com
