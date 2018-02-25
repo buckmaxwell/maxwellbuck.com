@@ -222,7 +222,7 @@ def static_octicons(filename):
 
 
 @app.route("/static/<filename>")
-def static(filename):
+def _static(filename):
 	try:
 		with open("site/static/{}".format(filename), "r") as f:
 			content = f.read()
