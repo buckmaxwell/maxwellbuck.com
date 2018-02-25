@@ -222,7 +222,7 @@ def static_octicons(filename):
 
 
 @app.route("/site/static/<filename>")
-def _static(filename):
+def site_static(filename):
 	try:
 		with open("site/static/{}".format(filename), "r") as f:
 			content = f.read()
@@ -235,6 +235,19 @@ def _static(filename):
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
 
+@app.route("/static/<filename>")
+def _static(filename):
+	try:
+		with open("site/static/{}".format(filename), "r") as f:
+			content = f.read()
+
+		#u = create_event(request.headers, request.cookies, filename)
+		#headers = {'Content-Type':'text/css'}
+		#if u:
+		#	headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
+		return content, 200, headers
+	except:
+		return return_404(is_mobile(request.headers.get('User-Agent')))
 ######
 
 @app.route("/<filename>.css")
