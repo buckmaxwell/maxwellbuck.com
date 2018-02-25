@@ -222,7 +222,7 @@ def static_octicons(filename):
 
 
 @app.route("/site/static/<filename>.<ext>")
-def site_static(filename):
+def site_static(filename, ext):
 	try:
                 filename = filename + '.' + ext
 		with open("site/static/{}".format(filename), "r") as f:
@@ -237,7 +237,7 @@ def site_static(filename):
 		return return_404(is_mobile(request.headers.get('User-Agent')))
 
 @app.route("/static/<filename>.<ext>")
-def _static(filename):
+def _static(filename, ext):
         print "I AM HERE"
 	try:
                 filename+'.'+ext
