@@ -35,13 +35,13 @@ done
 #rm site/*.md
 
 # Build resume
-grip "RESUME.md" --user-content --export --user=buckmaxwell --pass=$1 "site/resume.html"
+grip "RESUME.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/resume.html"
 
 # Build 404
-grip "404.md" --user-content --export --user=buckmaxwell --pass=$1 "site/404.html"
+grip "404.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/404.html"
 
 
 # Build Facebook Highlights
-grip "FB-HIGHLIGHTS.md" --user-content --export --user=buckmaxwell --pass=$1 "site/fb-highlights.html"
+grip "FB-HIGHLIGHTS.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/fb-highlights.html"
 
 

@@ -9,7 +9,7 @@ Well, that just doesn't sound right, does it? Winter is the gross nasty season, 
 
 This arbitrary line drawing seemed like a fools move to me, so I Googled the phrase "There are only two seasons" in order to find other similarly minded people.  I stumbled upon an article that agreed with me, but with a caveat.  Rather than marking seasons by whether or not the days are getting longer, the author suggests that Summer is a time when the days are longer than night and that winter is the time when nights are longer than days.  This solves the "Hey, Summer is supposed to be the good season" issue while also not overcomplicating the way we draw lines for seasons.
 
-<p align="center"><img src="../images/seasons.png" width="600"></p>
+<p align="center"><img src="images/seasons.png" width="600"></p>
 
 I was flying high and spent the next few days teaching others about the truth.  The seasons were two, and they were spring and summer.  It could be proved by this simple graph, one I drew many times over the next week.  It was this hubris that lead me into a conversation with my brother that lead to a dressing down.
 
@@ -17,13 +17,13 @@ Sam quickly realized that my model of the seasons was broken.  It only factored 
 
 This sine wave made no sense -- if it did, a horizontal line drawn across the graph should cross two points that represent days equal to one another.  But the days of course, are not actually equal in temperature or weather. May 7 and August 5 are about equal distance away from the summer solstice, but they are rarely ever very similar days.   In Columbus, OH where I go to school, the historical average high for May 7 is 70 degrees Farenheight. The average high for August 5th is 84, almost 15 degrees higher.  For other folks living in similar latitude, you'll recognize these temperatures as pretty typical.
 
-<p align="center"><img src="../images/this-aint-right.gif"></p>
+<p align="center"><img src="images/this-aint-right.gif"></p>
 
 Perhaps then, it is best that we keep track not just of the length of a day, but also of the Earth temperature.  If we do this, we will find that we now have 4 zero points instead of 2.  The four season model has been restored, and your faith in it has been strengthened.
 
 We can think of Spring as the season where the earth is cold, but the days are long.  In Summer, the days are long and the earth is hot.  In Fall, the earth is hot but the days are short.  And in Winter, the days are short, and the earth is cold.
 
-<p align="center"><img src="../images/there-we-go.gif"></p>
+<p align="center"><img src="images/there-we-go.gif"></p>
 
 
 

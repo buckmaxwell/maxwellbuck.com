@@ -11,7 +11,7 @@ ountry by a unique name. Store it as an integer and call it a day right? Well yo
 u could, and it would work most of the time, and pretty well.  Thing is, Zip cod
 e information provides much more than we usually allow it.
 
-<p align="center"><img src="../images/zipcode-code.jpg"></p>
+<p align="center"><img src="images/zipcode-code.jpg"></p>
 
 The first digit of a zip code specifies a region.  This digit can be 0-9.  That'
 s right, zip codes in the US Territories, and the North Eastern United States ar
@@ -20,7 +20,7 @@ e them as integers and then pad the front with zeroes if you ever need to print
 them, but there are some advantages to storing the zip code as a string, dependi
 ng on application.
 
-<p align="center"><img src="../images/zip_code_zones.gif"></p>
+<p align="center"><img src="images/zip_code_zones.gif"></p>
 
 A Zip code as a string of 5 digits allows us to leverage the SQL LIKE clause.  T
 his comes in handy when looking for zip codes that match a given prefix.  While 
@@ -31,7 +31,7 @@ pen though, and it does.  Three different sectional facility centers serve New Y
 ork City.  The next two specify specifically the zip code region, and the final 
 4 digits (if they are added) refer to a specific address.
 
-<p align="center"><img src="../images/ohio-3-digit-zip-code-map.gif"></p>
+<p align="center"><img src="images/ohio-3-digit-zip-code-map.gif"></p>
 
 Since zip code data is public, I dug up the latest [mammoth CSV file](http://fed
 eralgovernmentzipcodes.us/) from the government archives and put together a pyth

@@ -71,8 +71,8 @@ def get_post_links():
 
 				rd = str(date)
 				readabledate = rd[4:6] +'.' + rd[6:8] + '.' + rd[0:4] 
-				post_list.append( ('<p align=right>{date}</p><h2><img src="images/{img}" width="100" height="100" \
-				 hspace="10"><a href={url}>{title}</a></h2>\n'.format(img=ftimage, title=title,
+				post_list.append( ('<p align=right>{date}</p><h2><img align="middle" src="images/{img}" width="100" height="100" \
+                                        hspace="10" ><a href={url}>{title}</a></h2>\n'.format(img=ftimage, title=title,
 				  url=url, date=readabledate), date) )
 
 	post_list.sort(key=itemgetter(1), reverse=True)
@@ -105,6 +105,16 @@ def remove_meta_info_lines(filename):
   			else:
   				removed_lines.append(line)
   	return removed_lines
+
+def build_non_post_page(filename, base):
+    with open("./{}".format(filename), "w+") as f:
+        body=f.read()
+        f.write(base.format(intro="", body=body, year=datetime.now().year,
+            raw=filename))
+    print filename
+    return None
+
+
 
 def build_posts(base):
 	#filenames = [fn for fn in listdir("./posts")]
@@ -155,6 +165,8 @@ if __name__ in '__main__':
 	posts = get_post_links()
 	build_index(base, intro, posts)
 	removed_metainfo = build_posts(base)
+        #build_non_post_page('RESUME.md', base)
+        #build_non_post_page('404.md', base)
 	add_meta_info_lines(removed_metainfo)
 
 

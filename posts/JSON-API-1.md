@@ -8,7 +8,7 @@ Problem is, we backend developers like to get creative! With lightweight framewo
 Sure, you could write 3 pages of documentation detailing all your custom decisions for every one of the 30 endpoints in your system, many do.  Thing is, "good documentation", in front-end speak means, "prewritten code for each endpoint in Ruby, Python, PHP, Node , Java, and Objective-C."  I imagine some of you are agreeing and getting very excited about this idea.  Sad truth is though, most backend teams don't have the financial or human capital to just give you what you want.  Companies like Facebook, Twitter, and Tumblr will, but they aren't the only neat APIs out there, at least they are not the only APIs with information worthy of using.
 
 
-![Tumblr Dev Console](../images/tumblr-dev-console.png)
+![Tumblr Dev Console](images/tumblr-dev-console.png)
 
 
 Because of how delightful and easy these APIs are to use, its easy to get discouraged when building an API.  There is a lot to live up to. You can write documentation till you keel over but the chances of the masses reading what you wrote are slim!

@@ -26,7 +26,7 @@ eat APIs out there, at least they are not the only APIs with information worthy
 of using.
 
 
-![Tumblr Dev Console](../images/tumblr-dev-console.png)
+![Tumblr Dev Console](images/tumblr-dev-console.png)
 
 
 Because of how delightful and easy these APIs are to use, its easy to get discou

@@ -33,7 +33,7 @@ s the time when nights are longer than days.  This solves the "Hey, Summer is su
 pposed to be the good season" issue while also not overcomplicating the way we d
 raw lines for seasons.
 
-<p align="center"><img src="../images/seasons.png" width="600"></p>
+<p align="center"><img src="images/seasons.png" width="600"></p>
 
 I was flying high and spent the next few days teaching others about the truth.  
 The seasons were two, and they were spring and summer.  It could be proved by th
@@ -56,7 +56,7 @@ verage high for May 7 is 70 degrees Farenheight. The average high for August 5th
  is 84, almost 15 degrees higher.  For other folks living in similar latitude, y
 ou'll recognize these temperatures as pretty typical.
 
-<p align="center"><img src="../images/this-aint-right.gif"></p>
+<p align="center"><img src="images/this-aint-right.gif"></p>
 
 Perhaps then, it is best that we keep track not just of the length of a day, but
  also of the Earth temperature.  If we do this, we will find that we now have 4 
@@ -68,7 +68,7 @@ ong.  In Summer, the days are long and the earth is hot.  In Fall, the earth is
 hot but the days are short.  And in Winter, the days are short, and the earth is
  cold.
 
-<p align="center"><img src="../images/there-we-go.gif"></p>
+<p align="center"><img src="images/there-we-go.gif"></p>
 
 
 

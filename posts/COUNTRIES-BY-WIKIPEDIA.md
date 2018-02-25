@@ -12,7 +12,7 @@ Finally, I ran the modularity class algorithm with default settings a few times 
 
 The size of the nodes is based on the in-degree, or number of times other countries pages mentioned the country.  Here is a picture of my results ([see GitHub for full PNG and PDF files](https://github.com/buckmaxwell/wiki-country-scrape)). If you like this let me know, I may continue posting on this topic soon.
 
-![The Final Product](../images/country-clusters-large-lables.png)
+![The Final Product](images/country-clusters-large-lables.png)
 
 *NOTE: a previous version of this post included a different version of the same graph that was slightly different.  The older version is still available on GitHub but is less legible.*
 

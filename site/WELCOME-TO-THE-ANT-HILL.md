@@ -1,5 +1,5 @@
 
-# I think we should be more ant like  
+# I think we should be more ant-like!  
 
 I recently moved to New York City, and since I've been here, I've watched 3 docu
 mentaries about ants.  I cannot lie, the city reminds me of an ant hill.  Ever b
