@@ -1,6 +1,7 @@
 import requests
 import json
 
+# TO GET ACCESS TOKEN:  https://developers.facebook.com/tools/explorer/
 
 image_types = ['.gif', '.png', '.jpg', '.jpeg'] 
 MIN_LIKES = 25
