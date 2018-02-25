@@ -236,10 +236,11 @@ def site_static(filename):
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
 
-@app.route("/static/<filename>")
+@app.route("/static/<filename>.<ext>")
 def _static(filename):
         print "I AM HERE"
 	try:
+                filename+'.'+ext
 		with open("site/static/{}".format(filename), "r") as f:
 			content = f.read()
 
