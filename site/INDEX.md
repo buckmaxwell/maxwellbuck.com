@@ -26,6 +26,9 @@ le guy from Cleveland.  There are no ads on this site, no popups, no javascript,
 ou'll indulge in. Enjoy. 
 
 
+<p align=right>02.24.2018</p><h2><img src="images/ant.png" width="100" height="1
+00" 				 hspace="10"><a href=welcome-to-the-ant-hill.html>I think we should be m
+ore ant like  </a></h2>
 <p align=right>12.10.2016</p><h2><img src="images/Google-Big-Brother.png" width=
 "100" height="100" 				 hspace="10"><a href=google-analytics-aint-that-slick-hom
 ie.html>Is Google Analytics really that slick?</a></h2>
@@ -69,4 +72,4 @@ fication, Part 1</a></h2>
 
 ---
 
-(c) 2017 maxbuckdeveloper@gmail.com
+(c) 2018 maxbuckdeveloper@gmail.com
