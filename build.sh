@@ -1,4 +1,6 @@
 
+# set env vars
+export GRIPURL='//Users/maxbuck/Documents/Personal/maxwellbuck.com/site'
 
 # Build homepage
 python build_homepage.py
@@ -10,7 +12,7 @@ do
   html_filename=(${md_filename//.md/.html})
   html_filename=`echo "print '$html_filename'.lower()" | python`
   echo "entering grippp!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-  grip $md_filename --user-content --export --user=buckmaxwell --pass=$1 $html_filename
+  grip $md_filename --export --no-inline --user=buckmaxwell --pass=$1 $html_filename
   echo "grip complete!!!!!!!!!!!!!!!!!!!!!!!"
 
   
