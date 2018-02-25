@@ -1,6 +1,7 @@
 
 # set env vars
-export GRIPURL='//Users/maxbuck/Documents/Personal/maxwellbuck.com/site'
+#export GRIPURL='//Users/maxbuck/Documents/Personal/maxwellbuck.com/site'
+export GRIPURL='/site'
 
 # Build homepage
 python build_homepage.py
