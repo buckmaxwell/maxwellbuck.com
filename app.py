@@ -237,6 +237,7 @@ def site_static(filename):
 
 @app.route("/static/<filename>")
 def _static(filename):
+        print "I AM HERE"
 	try:
 		with open("site/static/{}".format(filename), "r") as f:
 			content = f.read()
