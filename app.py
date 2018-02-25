@@ -221,9 +221,10 @@ def static_octicons(filename):
 
 
 
-@app.route("/site/static/<filename>")
+@app.route("/site/static/<filename>.<ext>")
 def site_static(filename):
 	try:
+                filename = filename + '.' + ext
 		with open("site/static/{}".format(filename), "r") as f:
 			content = f.read()
 
