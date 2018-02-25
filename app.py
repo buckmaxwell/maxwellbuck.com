@@ -238,9 +238,9 @@ def site_static(filename, ext):
 
 @app.route("/static/<filename>.<ext>")
 def _static(filename, ext):
-        print "I AM HERE"
 	try:
-                filename+'.'+ext
+               
+                filename = filename+'.'+ext
 		with open("site/static/{}".format(filename), "r") as f:
 			content = f.read()
 
@@ -248,8 +248,9 @@ def _static(filename, ext):
 		#headers = {'Content-Type':'text/css'}
 		#if u:
 		#	headers['Set-Cookie'] = "{}={}; Expires={};".format(COOKIE_NAME, u, FUTURE)
-		return content, 200, headers
-	except:
+		return content, 200
+	except Exception as e:
+                print e
 		return return_404(is_mobile(request.headers.get('User-Agent')))
 ######
 
