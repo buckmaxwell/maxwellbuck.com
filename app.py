@@ -188,7 +188,7 @@ def hello3(filename):
 	except:
 		return return_404(is_mobile(request.headers.get('User-Agent')))
 
-@app.route("/asset/<filename>.css")
+@app.route("/site/asset/<filename>.css")
 def site_asset(filename):
 	try:
 		filename = filename + ".css"
@@ -204,7 +204,7 @@ def site_asset(filename):
 		return return_404(is_mobile(request.headers.get('User-Agent')))
 
 
-@app.route("/static/octicons/<filename>.css")
+@app.route("/site/static/octicons/<filename>.css")
 def static_octicons(filename):
 	try:
 		filename = filename + ".css"
@@ -221,7 +221,7 @@ def static_octicons(filename):
 
 
 
-@app.route("/static/<filename>")
+@app.route("/site/static/<filename>")
 def _static(filename):
 	try:
 		with open("site/static/{}".format(filename), "r") as f:
