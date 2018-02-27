@@ -2,3 +2,5 @@
 venv
 .DS_Store
 .env
+mobile_site/*.html
+mobile_site/*.md

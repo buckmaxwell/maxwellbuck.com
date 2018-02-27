@@ -1,7 +1,6 @@
 
 # set env vars
-#export GRIPURL='//Users/maxbuck/Documents/Personal/maxwellbuck.com/site'
-export GRIPURL='/site'
+export GRIPURL='//./'
 
 # Build homepage
 python build_homepage.py
@@ -15,13 +14,10 @@ do
   echo "entering grippp!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
   grip $md_filename --export --no-inline --user=buckmaxwell --pass=$1 $html_filename
   echo "grip complete!!!!!!!!!!!!!!!!!!!!!!!"
-
-  
-  #discard_fn='pleaserm.md'
-  #python readmd.py $md_filename $discard_fn
-  #mv $discard_fn $md_filename
-
 done
+
+# Copy HTML files from site to mobile_site
+cp site/*.html mobile_site
 
 # Prettyfy markdown files for raw versions
 cp posts/* site
@@ -32,17 +28,23 @@ do
   mv $discard_fn $md_filename
 done
 
+# Copy markdown files from site to mobile site
+cp site/*.md mobile_site
+
 # Remove created markdown files -- DON'T do this. They are used in the Mobile View.
 #rm site/*.md
 
 # Build resume
 grip "RESUME.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/resume.html"
+cp site/resume.html mobile_site/resume.html
 
 # Build 404
 grip "404.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/404.html"
-
+cp site/404.html mobile_site/404.html
 
 # Build Facebook Highlights
 grip "FB-HIGHLIGHTS.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/fb-highlights.html"
+cp site/fb-highlights.html mobile_site/fb_highlights.html
 
-
+# Copy images to mobile_site directory
+cp -a site/images mobile_site/

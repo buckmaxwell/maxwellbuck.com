@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+/*
+ *
+ * Mobile Site CSS
+ */
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  background: #2c292d; /* dark gray */
+  color: #fcfcfa; /* basically white */
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+body {
+  font-size: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-size-adjust: 0.5;
+}
+
+h1, h2, h3 {
+  color: #ab9df2; /* purple */
+}
+
+#grip-content {
+  border: 1px solid #ffd866; /* yellow */
+  padding: 10px;
+}
+
+a {
+  color: #ff6188; /* pink */
+  text-decoration: none; /* remove underline from links */
+}
+
+a:hover {
+  color: #ffd866; /* yellow */
+}
+
+em {
+  color: #a9dc76; /* green */
+}
+
+
+strong {
+  color: #ab9df2; /* purple */
+}
+
+[title~=thumbnail-img] {
+  display:none;
+}
+
+[title~=post-date] {
+  color: transparent;
+  /*display:none;*/
+}
+
+span + * {
+  display: none;
+}
+
+img[src*="static/hi.png"] {
+  display: none;
+}
+
+#readme h3 {
+  display: none;
+}
+
+img {
+   padding:2px;
+   border:2px solid #ff0;
+   background-color:#021a40;
+}
