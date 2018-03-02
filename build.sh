@@ -69,5 +69,27 @@ done
 cp -a site/thumbs mobile_site/
 
 
+# Gzip all html, md, and css files. Don't touch image files which can grow when
+# compressed.
+# Compress html and markdown files
+for file in site/*
+do
+  # file could be a directory, if so ignore error
+  gzip < $file > zipped_site/${file##*/}.gz 2> /dev/null 
+done
+
+# Compress css files
+for file in site/asset/*
+do
+  # file could be a directory, if so ignore error
+  gzip < $file > zipped_site/asset/${file##*/}.gz 2> /dev/null 
+done
+
+# Move images to zipped site
+cp -a site/static zipped_site
+cp -a site/images zipped_site
+cp -a site/thumbs zipped_site
+# DONE with site compression
+
 
 

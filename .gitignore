@@ -7,4 +7,11 @@ mobile_site/*.md
 mobile_site/static/*
 mobile_site/images/*
 mobile_site/thumbs/*
+mobile_site/asset/*
+zipped_site/*.gz
+zipped_site/static
+zipped_site/images
+zipped_site/thumbs
+zipped_site/asset/*
 site/thumbs/*
+maxwellbuck.pub
