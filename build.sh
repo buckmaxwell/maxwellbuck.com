@@ -62,8 +62,7 @@ for file in $FOLDER/*
 do
   # Try to resize each file in images folder, if one fails, don't tell us, it's
   # probably just not an image file.
-	#convert -quiet $file -resize $WIDTHx$HEIGHT\> site/thumbs/${file##*/} 2> /dev/null
-	convert -quiet $file -resize $WIDTHx$HEIGHT\> site/thumbs/${file##*/} #2> /dev/null
+	convert -quiet $file -resize $WIDTHx$HEIGHT\> site/thumbs/${file##*/} 2> /dev/null
 done
 
 # Copy thumbnails to mobile site
