@@ -1,5 +1,7 @@
 # Facebook Highlights
-This page aggregates public and private posts I've made on Facebook that got over 25 likes.  Some posts are old and I might not necessarly agree with them anymore. All the same, here they are.## 2017-06-01
+This page aggregates public and private posts I've made on Facebook that got over 25 likes.  Some posts are old and I might not necessarly agree with them anymore. All the same, here they are.
+
+## 2017-06-01
 Hot takes on the Trump "Beheading"
 
 1. Where are the free speech advocates now?  Ya'll righties are some snowflakes.

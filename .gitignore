@@ -6,3 +6,4 @@ mobile_site/*.html
 mobile_site/*.md
 mobile_site/static/*
 mobile_site/images/*
+mobile_site/thumbs/*

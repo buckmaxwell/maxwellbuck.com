@@ -73,7 +73,7 @@ def get_post_links():
 				readabledate = rd[4:6] +'.' + rd[6:8] + '.' + rd[0:4] 
 				post_list.append( ('<p title="post-date" \
                                 align=right>{date}</p><h2><img \
-                                title="thumbnail-img" align="middle" src="images/{img}" width="100" height="100" \
+                                title="thumbnail-img" align="middle" src="thumbs/{img}" width="100" height="100" \
                                         hspace="10" ><a href={url}>{title}</a></h2>\n'.format(img=ftimage, title=title,
 				  url=url, date=readabledate), date) )
 

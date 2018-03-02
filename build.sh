@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 # set env vars
 export GRIPURL='//./'
@@ -48,3 +49,26 @@ cp site/fb-highlights.html mobile_site/fb_highlights.html
 
 # Copy images to mobile_site directory
 cp -a site/images mobile_site/
+
+
+# Resize images and add to thumbnail directory -- faster page load on index 
+# THIS SCRIPT REQUIRES IMAGEMAGICK
+# $ brew install imagemagick or apt-get install imagemagick
+FOLDER="site/images"
+WIDTH=100
+HEIGHT=100
+#resize to either height or width, keeps proportions using imagemagick
+for file in $FOLDER/*
+do
+  # Try to resize each file in images folder, if one fails, don't tell us, it's
+  # probably just not an image file.
+	#convert -quiet $file -resize $WIDTHx$HEIGHT\> site/thumbs/${file##*/} 2> /dev/null
+	convert -quiet $file -resize $WIDTHx$HEIGHT\> site/thumbs/${file##*/} #2> /dev/null
+done
+
+# Copy thumbnails to mobile site
+cp -a site/thumbs mobile_site/
+
+
+
+
