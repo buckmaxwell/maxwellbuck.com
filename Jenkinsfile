@@ -1,12 +1,15 @@
 pipeline {
-    agent { docker { image 'ubuntu:16.04' } }
+    agent {
+        docker {
+            image 'ubuntu:16.04'
+            args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
+        }
+    }
     stages {
         stage('build') {
             steps {
                 sh 'echo "Beginning BUILD..."'
                 sh 'echo "Installing python..."'
-                sh 'echo "USER IS:"'
-                sh 'echo "$USER"'
                 sh 'apt-get update -y'
                 sh 'apt-get install -y python'
                 sh 'apt-get install -y python-pip'
