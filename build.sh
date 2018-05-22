@@ -12,9 +12,7 @@ do
   # Make HTML files
   html_filename=(${md_filename//.md/.html})
   html_filename=`echo "print '$html_filename'.lower()" | python`
-  echo "entering grippp!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
   grip $md_filename --export --no-inline --user=buckmaxwell --pass=$1 $html_filename
-  echo "grip complete!!!!!!!!!!!!!!!!!!!!!!!"
 done
 
 # Copy HTML files from site to mobile_site
