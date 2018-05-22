@@ -8,6 +8,8 @@ pipeline {
                 sh 'apt-get update -y'
                 sh 'apt-get install -y python'
                 sh 'apt-get install -y python-pip'
+                sh 'echo "Installing perl..."'
+                sh 'apt-get install -y perl'
                 sh 'apt-get install -y curl'
                 sh 'echo "Installing python requirements..."'
                 sh 'pip install -r requests.txt'
