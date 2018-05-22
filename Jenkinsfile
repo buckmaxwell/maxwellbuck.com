@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'The ubuntu docker image is running.'
+                sh 'echo "The ubuntu docker image is running."'
             }
         }
     }
