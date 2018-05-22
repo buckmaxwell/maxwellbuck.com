@@ -31,6 +31,11 @@ ou'll indulge in. Enjoy.
 ---
 
 
+<p title="post-date"                                 align=right>03.06.2018</p><
+h2><img                                 title="thumbnail-img" align="middle" src
+="thumbs/git.png" width="100" height="100"                                      
+   hspace="10" ><a href=i-dont-git-it.html>When you just don't git it.</a></h2>
+
 <p title="post-date"                                 align=right>02.24.2018</p><
 h2><img                                 title="thumbnail-img" align="middle" src
 ="thumbs/ant.png" width="100" height="100"                                      

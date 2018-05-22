@@ -33,6 +33,37 @@ and use.
 
 If you want to follow along using this as a tutorial, feel free to make a
 repository and toss a README or other files in it, though you don't need to.
+Here is a cheat sheet, and below that, a more detailed walkthrough.
+
+---
+
+**Create a feature branch, work on it, merge it into master**
+```bash
+$ git checkout -b new_branch
+$ vim files.txt # edit files
+$ git commit -am "my changes" # commit as many times as you need
+$ git merge master
+$ git push
+$ vim files.txt # fix merge conflicts
+$ git commit
+$ git checkout master
+$ git pull # make sure we are up to date
+Up to date
+$ git merge new_branch
+$ git branch -d new_branch 
+```
+
+**Revert a change without losing any commits**
+```bash
+$ git checkout <SHA OF COMMIT TO RESTORE> .
+$ git commit -am "resore old version without losing history"
+```
+
+**Base a branch off of a commit**
+```bash
+$ git checkout <SHA TO BASE BRANCH OFF OF>
+$ git checkout -b new_branch_name
+```
 
 ---
 
