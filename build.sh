@@ -38,10 +38,10 @@ done
 
 # Build resume
 # Build 404
-grip "404.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/404.html"
+grip "404.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/404.html"
 
 # Build Facebook Highlights
-grip "FB-HIGHLIGHTS.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/fb-highlights.html"
+grip "FB-HIGHLIGHTS.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/fb-highlights.html"
 
 
 # Resize images and add to thumbnail directory -- faster page load on index 
