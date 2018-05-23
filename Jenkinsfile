@@ -23,6 +23,9 @@ pipeline {
                 sh 'apt-get install -y git'
 
                 sh 'echo "Cloning repository..."'
+                try {
+                  sh 'rm -r maxwellbuck.com'
+                }
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
                 sh 'echo "Installing python requirements..."'
