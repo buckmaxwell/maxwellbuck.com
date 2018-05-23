@@ -23,11 +23,13 @@ pipeline {
                 sh 'apt-get install -y git'
 
                 sh 'echo "Cloning repository..."'
-                try {
-                  sh 'rm -r maxwellbuck.com'
-                }
-                catch (exc) {
-                  sh 'echo "Cloning..."' 
+                script {
+                  try {
+                    sh 'rm -r maxwellbuck.com'
+                  }
+                  catch (exc) {
+                    sh 'echo "Cloning..."' 
+                  }
                 }
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
