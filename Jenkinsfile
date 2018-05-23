@@ -6,7 +6,8 @@ pipeline {
                 dockerfile {
                     filename 'Dockerfile'
                     dir 'docker/build'
-                    args '-u root:sudo -v $HOME/workspace/myproject:/myproject --build-arg GITHUB_PASS=$GITHUB_PASS'
+                    args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
+                    additionalBuildArgs  '--build-arg GITHUB_PASS=$GITHUB_PASS'
                 }
             }
             steps {
