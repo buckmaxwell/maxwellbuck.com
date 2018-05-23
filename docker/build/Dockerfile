@@ -8,5 +8,5 @@ RUN apt-get install -y python
 RUN apt-get install -y python-pip
 RUN apt-get install -y perl
 RUN apt-get install -y git
-COPY ~/.githubpass /home/.githubpass 
+COPY /home/max/.githubpass /home/.githubpass 
 
