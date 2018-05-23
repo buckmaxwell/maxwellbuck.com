@@ -162,10 +162,15 @@ def add_meta_info_lines(removed_metainfo):
 
 
 if __name__ in '__main__':
-	base = get_base()
+        print('Building homepage...')
+	base = get_base()   
+        print('Built base...')
 	intro = get_intro()
+        print('Built intro...')
 	posts = get_post_links()
+        print('Built post links...')
 	build_index(base, intro, posts)
+        print('Built index...')
 	removed_metainfo = build_posts(base)
         #build_non_post_page('RESUME.md', base)
         #build_non_post_page('404.md', base)
