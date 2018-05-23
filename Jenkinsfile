@@ -18,8 +18,10 @@ pipeline {
                 sh 'echo "Installing perl..."'
                 sh 'apt-get install -y perl'
 
-                sh 'Cloning repository...'
+                sh 'Installing git...'
                 sh 'apt-get install -y git'
+                
+                sh 'Cloning repository...'
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
                 sh 'echo "Installing python requirements..."'
