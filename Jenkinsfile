@@ -6,6 +6,7 @@ pipeline {
                 dockerfile {
                     filename 'Dockerfile'
                     dir 'docker/build'
+                    args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
                 }
             }
             steps {
