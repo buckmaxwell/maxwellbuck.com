@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -z ${GITHUB_PASSWORD+x} ]
+if [ -z ${GITHUB_PASS+x} ]
 then
   echo "PASSWORD IS NOT SET!"
 else
@@ -20,7 +20,7 @@ do
   # Make HTML files
   html_filename=(${md_filename//.md/.html})
   html_filename=`echo "print '$html_filename'.lower()" | python`
-  grip $md_filename --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASSWORD $html_filename
+  grip $md_filename --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS $html_filename
 done
 
 

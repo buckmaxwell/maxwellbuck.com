@@ -3,7 +3,6 @@ venv
 .DS_Store
 .env
 mobile_site/*
-!mobile_site/*.md
 zipped_site/*
 !zipped_site/*.md
 site/thumbs/*
