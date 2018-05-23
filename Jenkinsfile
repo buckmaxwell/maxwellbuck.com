@@ -3,24 +3,15 @@ pipeline {
     stages {
         stage('build') {
             agent {
-                docker {
-                    image 'ubuntu:16.04'
-                    args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
+                dockerfile {
+                    filename 'Dockerfile'
+                    dir 'docker/build'
+                    label 'dockerbuildenv'
+                    additionalBuildArgs  '-u root:sudo -v $HOME/workspace/myproject:/myproject'
                 }
             }
             steps {
                 sh 'echo "Beginning BUILD..."'
-
-                sh 'echo "Installing python..."'
-                sh 'apt-get update -y'
-                sh 'apt-get install -y python'
-                sh 'apt-get install -y python-pip'
-
-                sh 'echo "Installing perl..."'
-                sh 'apt-get install -y perl'
-
-                sh 'echo "Installing git..."'
-                sh 'apt-get install -y git'
 
                 sh 'echo "Cloning repository..."'
                 script {
