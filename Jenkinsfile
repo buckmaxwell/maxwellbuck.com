@@ -25,6 +25,8 @@ pipeline {
                 sh 'echo "Cloning repository..."'
                 try {
                   sh 'rm -r maxwellbuck.com'
+                } catch {
+                  sh 'echo "Cloning..."' 
                 }
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
