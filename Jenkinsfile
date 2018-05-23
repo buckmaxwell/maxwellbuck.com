@@ -9,14 +9,21 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo "Beginning BUILD..."'
+
                 sh 'echo "Installing python..."'
                 sh 'apt-get update -y'
                 sh 'apt-get install -y python'
                 sh 'apt-get install -y python-pip'
+
                 sh 'echo "Installing perl..."'
                 sh 'apt-get install -y perl'
-                sh 'apt-get install -y curl'
+
+                sh 'Cloning repository...'
+                sh 'apt-get install -y git'
+                sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
+
                 sh 'echo "Installing python requirements..."'
+                sh 'cd maxwellbuck.com'
                 sh 'pip install -r requests.txt'
                 sh 'echo "Running build script..."'
                 sh './build.sh'
