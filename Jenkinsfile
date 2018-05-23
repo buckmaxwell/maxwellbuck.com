@@ -6,7 +6,6 @@ pipeline {
                 dockerfile {
                     filename 'Dockerfile'
                     dir 'docker/build'
-                    label 'dockerbuildenv'
                     additionalBuildArgs  '-u root:sudo -v $HOME/workspace/myproject:/myproject'
                 }
             }
