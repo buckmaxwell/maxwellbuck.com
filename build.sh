@@ -4,7 +4,7 @@ if [ -z ${GITHUB_PASS+x} ]
 then
   echo "PASSWORD IS NOT SET!"
 else
-  echo "password was set via envar...";
+  echo "password was set to $GITHUB_PASS";
 fi
 
 
