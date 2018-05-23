@@ -1,12 +1,13 @@
 pipeline {
-    agent {
-        docker {
-            image 'ubuntu:16.04'
-            args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
-        }
-    }
+    agent any
     stages {
         stage('build') {
+            agent {
+                docker {
+                    image 'ubuntu:16.04'
+                    args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
+                }
+            }
             steps {
                 sh 'echo "Beginning BUILD..."'
 
@@ -20,13 +21,14 @@ pipeline {
 
                 sh 'echo "Installing git..."'
                 sh 'apt-get install -y git'
-                
+
                 sh 'echo "Cloning repository..."'
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
                 sh 'echo "Installing python requirements..."'
                 sh 'cd maxwellbuck.com'
-                sh 'pip install -r requests.txt'
+                sh 'pip install -r requirements.txt'
+
                 sh 'echo "Running build script..."'
                 sh './build.sh'
             }
