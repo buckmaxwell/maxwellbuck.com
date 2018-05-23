@@ -12,7 +12,7 @@ do
   # Make HTML files
   html_filename=(${md_filename//.md/.html})
   html_filename=`echo "print '$html_filename'.lower()" | python`
-  grip $md_filename --export --no-inline --user=buckmaxwell --pass=$(cat .githubpass) $html_filename
+  grip $md_filename --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS $html_filename
 done
 
 

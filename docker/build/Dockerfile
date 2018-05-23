@@ -8,5 +8,5 @@ RUN apt-get install -y python
 RUN apt-get install -y python-pip
 RUN apt-get install -y perl
 RUN apt-get install -y git
-COPY /home/max/.githubpass /home/.githubpass 
-
+ARG GITHUB_PASS
+ENV GITHUB_PASS=$GITHUB_PASS
