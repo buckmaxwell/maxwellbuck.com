@@ -29,7 +29,9 @@ pipeline {
 
                 sh 'echo "Copy dummy file to host"'
                 sh 'touch fakeassdummy.txt'
-                sh 'scp -o StrictHostKeyChecking=no fakeassdummy.txt max@maxwellbuck.com:'
+                sshagent (credentials: ['build-ssh']) {
+                  sh 'scp -o StrictHostKeyChecking=no fakeassdummy.txt max@maxwellbuck.com:'
+                }
 
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
