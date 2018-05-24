@@ -7,7 +7,6 @@ else
   echo "password was set to $GITHUB_PASS";
 fi
 
-
 # set env vars
 export GRIPURL='//./'
 
@@ -22,6 +21,9 @@ do
   html_filename=`echo "print '$html_filename'.lower()" | python`
   grip $md_filename --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS $html_filename
 done
+
+# move grip assets to asset
+cp /root/.grip/cache-4.5.2/* asset/
 
 
 # Prettyfy markdown files for raw versions

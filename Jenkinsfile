@@ -29,7 +29,7 @@ pipeline {
 
                 sh 'echo "Installing python requirements..."'
                 sh 'cd maxwellbuck.com'
-                sh 'pip install grip'
+                sh 'pip install grip==4.5.2'
                 /*sh 'pip install -r requirements.txt'*/
 
                 sh 'echo "Running build script..."'
