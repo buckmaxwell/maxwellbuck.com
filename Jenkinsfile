@@ -11,6 +11,8 @@ pipeline {
             }
             environment {
                 GITHUB_PASS = credentials('github-pass')
+                PRIVATE_KEY = credentials('build-key')
+                PUBLIC_KEY = credentials('build-key-pub')
             }
             steps {
                 sh 'echo "Beginning BUILD..."'
@@ -24,6 +26,10 @@ pipeline {
                     sh 'echo "Cloning..."' 
                   }
                 }
+                sh 'echo "Moving ssh keys..."'
+                sh 'echo $PRIVATE_KEY > ~/.ssh/id_ecdsa'
+                sh 'echo $PUBLIC_KEY > ~/.ssh/id_ecdsa.pub'
+
                 sh 'echo "Copy dummy file to host"'
                 sh 'touch fakeassdummy.txt'
                 sh 'scp -o StrictHostKeyChecking=no fakeassdummy.txt max@maxwellbuck.com:'
