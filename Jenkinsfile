@@ -7,7 +7,7 @@ pipeline {
                     filename 'Dockerfile'
                     dir 'docker/build'
                     args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
-                    additionalBuildArgs  "--build-arg priv_key=${BUILD_KEY} --build-arg pub_key=${BUILD_KEY_PUB}"
+                    additionalBuildArgs  "--build-arg BUILD_KEY=${BUILD_KEY} --build-arg BUILD_KEY_PUB=${BUILD_KEY_PUB}"
                 }
             }
             environment {
