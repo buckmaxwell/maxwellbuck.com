@@ -29,7 +29,8 @@ pipeline {
 
                 sh 'echo "Installing python requirements..."'
                 sh 'cd maxwellbuck.com'
-                sh 'pip install -r requirements.txt'
+                sh 'pip install grip'
+                /*sh 'pip install -r requirements.txt'*/
 
                 sh 'echo "Running build script..."'
                 sh './build.sh'
