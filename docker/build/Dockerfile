@@ -8,5 +8,3 @@ RUN apt-get install -y python
 RUN apt-get install -y python-pip
 RUN apt-get install -y perl
 RUN apt-get install -y git
-ARG GITHUB_PASS
-ENV GITHUB_PASS=$GITHUB_PASS
