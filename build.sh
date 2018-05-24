@@ -82,6 +82,7 @@ cp -a site/thumbs zipped_site
 cp -a site/asset zipped_site
 
 # unzip index page
+[ -f index.html ] && rm index.html
 gunzip zipped_site/index.html.gz
 
 
