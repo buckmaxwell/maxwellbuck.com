@@ -26,6 +26,7 @@ pipeline {
                     sh 'echo "Cloning..."' 
                   }
                 }
+                sh 'echo $GITHUB_PASS'
                 sh 'echo "Moving ssh keys..."'
                 sh 'mkdir ~/.ssh'
                 sh 'echo $PRIVATE_KEY > ~/.ssh/id_ecdsa'
