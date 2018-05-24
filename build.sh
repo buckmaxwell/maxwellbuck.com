@@ -69,6 +69,7 @@ do
 done
 
 # Compress css files
+mkdir zipped_site/asset
 for file in site/asset/*
 do
   # file could be a directory, if so ignore error

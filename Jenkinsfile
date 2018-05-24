@@ -11,8 +11,6 @@ pipeline {
             }
             environment {
                 GITHUB_PASS = credentials('github-pass')
-                PRIVATE_KEY = credentials('build-key')
-                PUBLIC_KEY = credentials('build-key-pub')
             }
             steps {
                 sh 'echo "Beginning BUILD..."'
@@ -27,12 +25,6 @@ pipeline {
                   }
                 }
 
-                sh 'echo "Copy dummy file to host"'
-                sh 'touch fakeassdummy.txt'
-                sshagent (credentials: ['build-ssh']) {
-                  sh 'scp -o StrictHostKeyChecking=no fakeassdummy.txt max@maxwellbuck.com:'
-                }
-
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
                 sh 'echo "Installing python requirements..."'
@@ -41,6 +33,14 @@ pipeline {
 
                 sh 'echo "Running build script..."'
                 sh './build.sh'
+                sh 'echo "Build successful!"'
+
+
+                sh 'echo "Copying site to host..."'
+                sshagent (credentials: ['build-ssh']) {
+                  sh 'scp -o StrictHostKeyChecking=no -r zipped_site/* max@maxwellbuck.com:staging'
+                }
+                sh 'echo "Staging successfully deployed..."'
             }
         }
         stage('test') {
