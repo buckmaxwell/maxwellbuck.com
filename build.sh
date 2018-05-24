@@ -80,7 +80,9 @@ cp -a site/static zipped_site
 cp -a site/images zipped_site
 cp -a site/thumbs zipped_site
 cp -a site/asset zipped_site
-# DONE with site compression
+
+# unzip index page
+gunzip zipped_site/index.html.gz
 
 
 

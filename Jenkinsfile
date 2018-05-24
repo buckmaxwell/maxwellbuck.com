@@ -38,7 +38,7 @@ pipeline {
 
                 sh 'echo "Copying site to host..."'
                 sshagent (credentials: ['build-ssh']) {
-                  sh 'scp -o StrictHostKeyChecking=no -r zipped_site/* max@maxwellbuck.com:staging'
+                  sh 'scp -o StrictHostKeyChecking=no -r zipped_site/* max@maxwellbuck.com:/var/www/html/staging'
                 }
                 sh 'echo "Staging successfully deployed..."'
             }
