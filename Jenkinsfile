@@ -7,7 +7,7 @@ pipeline {
                     filename 'Dockerfile'
                     dir 'docker/build'
                     args '-u root:sudo -v $HOME/workspace/myproject:/myproject'
-                    additionalBuildArgs  "--build-arg BUILD_KEY=${BUILD_KEY} --build-arg BUILD_KEY_PUB=${BUILD_KEY_PUB}"
+                    additionalBuildArgs  "--build-arg BUILD_KEY=${env.BUILD_KEY} --build-arg BUILD_KEY_PUB=${env.BUILD_KEY_PUB}"
                 }
             }
             environment {
@@ -30,8 +30,8 @@ pipeline {
 
                 sh 'echo "Move keys..."'
                 sh "mkdir ~/.ssh"
-                sh "echo $BUILD_KEY > ~/.ssh/id_ecdsa"
-                sh "echo $BUILD_KEY_PUB > ~/.ssh/id_ecdsa.pub"
+                sh "echo ${env.BUILD_KEY} > ~/.ssh/id_ecdsa"
+                sh "echo ${env.BUILD_KEY_PUB} > ~/.ssh/id_ecdsa.pub"
                 sh "chmod 400 ~/.ssh/id_ecdsa"
                 sh "cat ~/.ssh/id_ecdsa"
 
