@@ -8,3 +8,4 @@ RUN apt-get install -y python
 RUN apt-get install -y python-pip
 RUN apt-get install -y perl
 RUN apt-get install -y git
+RUN apt-get install -y imagemagick
