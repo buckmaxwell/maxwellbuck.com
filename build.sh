@@ -23,7 +23,7 @@ do
 done
 
 # move grip assets to asset
-cp /root/.grip/cache-4.5.2/* asset/
+cp /root/.grip/cache-4.5.2/* site/asset/
 
 
 # Prettyfy markdown files for raw versions
