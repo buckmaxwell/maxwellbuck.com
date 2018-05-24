@@ -29,7 +29,9 @@ pipeline {
                 sh 'echo "Moving ssh keys..."'
                 sh 'mkdir ~/.ssh'
                 sh 'echo $PRIVATE_KEY > ~/.ssh/id_ecdsa'
+                sh 'chmod 400 ~/.ssh/id_ecdsa'
                 sh 'echo $PUBLIC_KEY > ~/.ssh/id_ecdsa.pub'
+
 
                 sh 'echo "Copy dummy file to host"'
                 sh 'touch fakeassdummy.txt'
