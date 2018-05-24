@@ -24,6 +24,12 @@ pipeline {
                     sh 'echo "Cloning..."' 
                   }
                 }
+                sh 'echo "Add maxwellbuck.com to list of known hosts"' 
+                sh 'ssh-keyscan maxwellbuck.com,165.227.83.90 ~/.ssh/known_hosts'
+                sh 'echo "Copy dummy file to host"'
+                sh 'touch fakeassdummy.txt'
+                sh 'scp fakeassdummy.txt max@maxwellbuck.com:'
+
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
                 sh 'echo "Installing python requirements..."'
