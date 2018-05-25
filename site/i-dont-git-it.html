@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>I-DONT-GIT-IT.md - Grip</title>
+  <link rel="icon" href="/static/favicon.ico" />
+  <link rel="stylesheet" href="/asset/site-e1e1bc98a53e.css" />
+  <link rel="stylesheet" href="/asset/frameworks-7a12427f1445.css" />
+  <link rel="stylesheet" href="/asset/github-d48e9398f9dd.css" />
+  <link rel="stylesheet" href="/static/octicons/octicons.css" />
+  <style>
+    /* Page tweaks */
+    .preview-page {
+      margin-top: 64px;
+    }
+    /* User-content tweaks */
+    .timeline-comment-wrapper > .timeline-comment:after,
+    .timeline-comment-wrapper > .timeline-comment:before {
+      content: none;
+    }
+    /* User-content overrides */
+    .discussion-timeline.wide {
+      width: 920px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div id="preview-page" class="preview-page" data-autorefresh-url="">
+
+    
+
+      <div role="main" class="main-content">
+        <div class="container new-discussion-timeline experiment-repo-nav">
+          <div class="repository-content">
+            <div id="readme" class="readme boxed-group clearfix announce instapaper_body md">
+              
+                <h3>
+                  <span class="octicon octicon-book"></span>
+                  I-DONT-GIT-IT.md
+                </h3>
+              
+              <article class="markdown-body entry-content" itemprop="text" id="grip-content">
+                <p align="right">
+  <a href="maxwellbuck.pub">PGP</a>
+  •
+  <a href="fb-highlights.html">Thoughts</a>
+  •
+  <a href="I-DONT-GIT-IT.md">Raw</a>
+  •
+  <a href="index.html">Home</a>
+</p>
+<h1>
+<a id="user-content-when-you-just-dont-git-it" class="anchor" href="#when-you-just-dont-git-it" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>When you just don't git it.</h1>
+<p>Git is probably one of the most widely used tools by developers today.  Most of
+us have learned to love it, but few of us really understand it. We go about our
+merry lives with no more than a cursory understanding of how version control is
+really working, until we bork our repo somehow, and somehow, we find the right
+Stack Overflow post, and very rarely, all is lost.</p>
+<p>You are here for 1 of 2 reasons.</p>
+<ol>
+<li>You borked your repo and are trying to backpeddle</li>
+<li>You are the type of nerd who plans ahead.</li>
+</ol>
+<p>Both reasons are valid and I'll do my best to accomodate you no matter why
+you're here. With the first user-type in mind, this post will prioritize
+brevity.  If you are in the latter camp, please read on, but know that for a
+more fine-grained look at Git you should consult <a href="git-scm.com">git-scm.com</a>.</p>
+<h2>
+<a id="user-content-how-you-should-use-git-regularly" class="anchor" href="#how-you-should-use-git-regularly" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How you should use git regularly</h2>
+<p>Ain't that the truth.  According to git-scm.com, "an almost endless number of
+workflows can be implemented with relative ease."</p>
+<p>But that doesn't help you, and since decisions suck, here is what to do in a few
+common situations.</p>
+<p>I'll be describing a <code>merge</code> based workflow as opposed to a <code>rebase</code> and
+<code>cherry-pick</code> based flow. Some good discussion about the advantages and
+disadvantages of each can be found
+<a href="https://stackoverflow.com/questions/1241720/git-cherry-pick-vs-merge-workflow" rel="nofollow">here</a>.
+My main reason for prefering the merge flow is based on ease of understanding
+and use.</p>
+<p>If you want to follow along using this as a tutorial, feel free to make a
+repository and toss a README or other files in it, though you don't need to.
+Here is a cheat sheet, and below that, a more detailed walkthrough.</p>
+<hr>
+<p><strong>Create a feature branch, work on it, merge it into master</strong></p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout -b new_branch
+$ vim files.txt <span class="pl-c"><span class="pl-c">#</span> edit files</span>
+$ git commit -am <span class="pl-s"><span class="pl-pds">"</span>my changes<span class="pl-pds">"</span></span> <span class="pl-c"><span class="pl-c">#</span> commit as many times as you need</span>
+$ git merge master
+$ git push
+$ vim files.txt <span class="pl-c"><span class="pl-c">#</span> fix merge conflicts</span>
+$ git commit
+$ git checkout master
+$ git pull <span class="pl-c"><span class="pl-c">#</span> make sure we are up to date</span>
+Up to date
+$ git merge new_branch
+$ git branch -d new_branch </pre></div>
+<p><strong>Revert a change without losing any commits</strong></p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout <span class="pl-k">&lt;</span>SHA OF COMMIT TO RESTORE<span class="pl-k">&gt;</span> <span class="pl-c1">.</span>
+$ git commit -am <span class="pl-s"><span class="pl-pds">"</span>resore old version without losing history<span class="pl-pds">"</span></span></pre></div>
+<p><strong>Base a branch off of a commit</strong></p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout <span class="pl-k">&lt;</span>SHA TO BASE BRANCH OFF OF<span class="pl-k">&gt;</span>
+$ git checkout -b new_branch_name</pre></div>
+<hr>
+<p><em>git branch.</em> You don't have to do this every time, but checking where you are
+once in a while is a good thing. Stick to the conventions.  Master is not to be
+trifled with, do development in a different branch.</p>
+<div class="highlight highlight-source-shell"><pre>$ git branch
+<span class="pl-k">*</span> master</pre></div>
+<p><em>git status.</em> Looks like we're on master now.  Since we don't want to do dirty work directly
+on master, it looks like we've got to check out a branch.  Before we do, let's
+check that any local changes to master have been commited or stashed.</p>
+<div class="highlight highlight-source-shell"><pre>$ git status
+On branch master
+Your branch is up-to-date with <span class="pl-s"><span class="pl-pds">'</span>origin/master<span class="pl-pds">'</span></span>.
+
+nothing to commit, working tree clean</pre></div>
+<p>Great.  That should always be the case, since no dev work should <em>ever</em> happen
+on master.  But what would we do if we checked and it weren't the case?</p>
+<div class="highlight highlight-source-shell"><pre>$ git status
+On branch master
+Your branch is up-to-date with <span class="pl-s"><span class="pl-pds">'</span>origin/master<span class="pl-pds">'</span></span>.
+
+Changes not staged <span class="pl-k">for</span> commit:
+  (use <span class="pl-s"><span class="pl-pds">"</span>git add &lt;file&gt;...<span class="pl-pds">"</span></span> to update what will be committed)
+  (use <span class="pl-s"><span class="pl-pds">"</span>git checkout -- &lt;file&gt;...<span class="pl-pds">"</span></span> to discard changes <span class="pl-k">in</span> working directory)
+
+	modified:  README.md 
+
+no changes added to commit (use <span class="pl-s"><span class="pl-pds">"</span>git add<span class="pl-pds">"</span></span> and/or <span class="pl-s"><span class="pl-pds">"</span>git commit -a<span class="pl-pds">"</span></span>)</pre></div>
+<p>Oops.  A file has been modified.  Since we are on master we know we need to
+throw this work away... it was probably an accident anyway?</p>
+<p>If it was, do this awful thing that you've copy-pasted from a Stack Overflow
+article out of dispair a thousand times.  But if it wasn't an accident, wait!</p>
+<div class="highlight highlight-source-shell"><pre>$ git reset --hard
+HEAD is now at 0c146e3 Initial commit</pre></div>
+<p>Congrats all your local changes that haven't been pushed are now gone. I'll
+remind you that <strong>this is throwing away all uncommited changes on your local
+branch.</strong> If this is what you want to do, it's great.</p>
+<p>Its also possible that when running git status you see something telling you
+your branch is <code>ahead of 'origin/master'</code> by x number of commits. If you did not
+intend this, and you <strong>aren't</strong> wedded to the work you accidentally did in the
+master branch, just blow it away.  Why not?</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-smi">$git</span> reset --hard origin/HEAD</pre></div>
+<p>This is destructive.  It throws away all your local changes, including those you
+commited but didn't push.  Sometimes, this is what you want, but <strong>a lot of the
+time it's not.</strong>  So what then?</p>
+<h3>
+<a id="user-content-what-nobody-seems-to-know" class="anchor" href="#what-nobody-seems-to-know" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What nobody seems to know</h3>
+<p>What then? Well, you can always just not thow away your working code.</p>
+<p>Let's imagine that I just made some changes that I really like, but that I
+accidentally made them on the master branch. I haven't pushed, so I don't owe
+the dev team any beer yet, but I don't want to blow away a days work with a hard
+reset.  It shouldn't have been a day of work of course, but alas, we all make
+mistakes, and yours, on this day, was twofold,</p>
+<ol>
+<li>not checking which branch you were on, and</li>
+<li>not pushing to a remote repository frequently enough.</li>
+</ol>
+<p>In this case, your second mistake turns out to be a small blessing, but don't
+let that make you think you should do it again.</p>
+<p>Let's fix your error without blowing away your local changes. First, commit the
+changes on master if you haven't yet.</p>
+<div class="highlight highlight-source-shell"><pre>$ git commit -am <span class="pl-s"><span class="pl-pds">"</span>changes I like, wrong branch, we all make mistakes<span class="pl-pds">"</span></span></pre></div>
+<p><strong>REMEMBER,</strong> don't push yet! If you do, you'll break master! Now, let's see
+where we are, and where we wanna go.</p>
+<div class="highlight highlight-source-shell"><pre>$ git log
+commit 84db201c2cacc1c8dc68286573647da6cae83a77 (HEAD -<span class="pl-k">&gt;</span> master)
+Author: Max Buck <span class="pl-k">&lt;</span>maxwellhigginsbuck@gmail.com<span class="pl-k">&gt;</span>
+Date:   Tue Mar 6 21:04:07 2018 -0500
+
+    changes I like, wrong branch, we all make mistakes
+
+commit 0c146e35a1b382a4b22ae27d0666a271eedfd168 (origin/master, origin/HEAD)
+Author: Max Buck <span class="pl-k">&lt;</span>maxwellhigginsbuck@gmail.com,<span class="pl-k">&gt;</span>
+Date:   Tue Mar 6 20:17:44 2018 -0500
+
+    Initial commit</pre></div>
+<p>We want to restore the state we had before in a new commit, without modifying
+the old stuff.  To do this we will use checkout.</p>
+<div class="highlight highlight-source-shell"><pre>$ git <span class="pl-c1">cd</span> <span class="pl-k">&lt;</span>PROJECT ROOT<span class="pl-k">&gt;</span> <span class="pl-c"><span class="pl-c">#</span> this is very important</span>
+$ git checkout 0c146e35a1b382a4b22ae27d0666a271eedfd168 <span class="pl-c1">.</span></pre></div>
+<p>Don't forget the <code>.</code> at the end of the second command.  This will apply the
+changes to the whole tree as long as you are in the project root. Feel free to
+run <code>git status</code> again.  You should see that there were modifications to your
+files. Now you can commit your changes.</p>
+<div class="highlight highlight-source-shell"><pre>$ git commit -am <span class="pl-s"><span class="pl-pds">"</span>restored state to the way it was before<span class="pl-pds">"</span></span>
+[master 92cda7d] restored state to the way it was before
+ 1 file changed, 3 deletions(-)
+$
+$ <span class="pl-c"><span class="pl-c">#</span> Run git log to see how you did</span>
+$ git log
+commit 92cda7dfc39d0f466b10a84cd57bb551bbae2543 (HEAD -<span class="pl-k">&gt;</span> master)
+Author: Max Buck <span class="pl-k">&lt;</span>maxwellhigginsbuck@gmail.com<span class="pl-k">&gt;</span>
+Date:   Tue Mar 6 21:15:18 2018 -0500
+
+    restored state to the way it was before
+
+commit 84db201c2cacc1c8dc68286573647da6cae83a77
+Author: Max Buck <span class="pl-k">&lt;</span>maxwellhigginsbuck@gmail.com<span class="pl-k">&gt;</span>
+Date:   Tue Mar 6 21:04:07 2018 -0500
+
+    changes I like, wrong branch, we all make mistakes
+
+commit 0c146e35a1b382a4b22ae27d0666a271eedfd168 (origin/master, origin/HEAD)
+Author: Max Buck <span class="pl-k">&lt;</span>buck.169@osu.edu<span class="pl-k">&gt;</span>
+Date:   Tue Mar 6 20:17:44 2018 -0500
+
+    Initial commit
+$</pre></div>
+<p>There is now an extra commit.  The latest commit has exactly the same state as
+master does on the remote repository.  Master is saved! We can now push it
+without fear.</p>
+<div class="highlight highlight-source-shell"><pre>$ git push origin master</pre></div>
+<p>So what about all the stuff you worked on in the master branch that you liked?
+The stuff in that middle commit? Don't worry, we haven't forgotten about that.</p>
+<p>Find the SHA of the commit for the changes you like using git log, and do a
+checkout.  You'll get a message saying you are in a detached HEAD state.</p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout 84db201c2cacc1c8dc68286573647da6cae83a77
+Note: checking out <span class="pl-s"><span class="pl-pds">'</span>84db201c2cacc1c8dc68286573647da6cae83a77<span class="pl-pds">'</span></span>.
+
+You are <span class="pl-k">in</span> <span class="pl-s"><span class="pl-pds">'</span>detached HEAD<span class="pl-pds">'</span></span> state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make <span class="pl-k">in</span> this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+<span class="pl-k">do</span> so (now or later) by using -b with the checkout <span class="pl-c1">command</span> again. Example:
+
+  git checkout -b <span class="pl-k">&lt;</span>new-branch-name<span class="pl-k">&gt;</span>
+
+HEAD is now at 84db201... changes I like, wrong branch, we all make mistakes</pre></div>
+<p>Great, now let's check out another branch.  Naming branches is really tough
+because sometimes the functionality they cover is very hard to include in a
+reasonably sized name.  If you are using GitHub, I recommend naming your
+branch after the issue number that it corresponds to. At this time, I've made a
+GitHub issue in my repository with a description of the development work I am
+doing. Suggestions on how to use GitHub issues as a successful project
+management tool is a blog post for another day.</p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout -b iss1
+Switched to a new branch <span class="pl-s"><span class="pl-pds">'</span>iss1<span class="pl-pds">'</span></span></pre></div>
+<p>If I were to run git log in this branch, the latest change would not be the
+revision we made on master, but the last commit before that -- the SHA we
+checked out into the detached HEAD state. Finish doing development work for your
+feature in this branch, then commit the changes. At this point, we are ready to
+merge our changes back into the master branch, but first, we should merge master
+into our own branch.  That way, if there are merge conflicts, we can resolve
+them on the feature branch instead of on master.  When they are resolved, we can
+confidently merge our branch into master.</p>
+<div class="highlight highlight-source-shell"><pre>$ git branch
+<span class="pl-k">*</span> iss1
+  master
+$ git fetch
+$ git merge master
+Auto-merging README.md
+CONFLICT (content): Merge conflict <span class="pl-k">in</span> README.md
+Automatic merge failed<span class="pl-k">;</span> fix conflicts and <span class="pl-k">then</span> commit the result.</pre></div>
+<p><em>NOTE: git fetch followed by git merge is the same as git pull.</em></p>
+<p>We've got a merge conflict. Are you surprised?</p>
+<p>We edited the same parts of a file in multiple places. Perhaps in our
+restoration of master we deleted a line, but in our feauture branch left it. All
+sorts of things could have happened. If we knew for a fact that we wanted the
+feature branch versions of everything, we could tell git to prefer the current
+branch in the case of conflicts. Since we can't really have perfect confidence
+in most cases (who knows what your cowboy coder coworker did to master) it's
+best to just deal with the merge conflicts.  It's not nearly as hard as you
+might think, and chances are, there REALLY aren't that many merge conflicts.</p>
+<p>So how do we resolve them the right way?</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> git-it</span>
+A simple project to assist with learning to be effective with Git
+<span class="pl-k">&lt;&lt;&lt;</span><span class="pl-s"><span class="pl-k">&lt;&lt;&lt;</span><span class="pl-s">&lt;</span></span> HEAD
+
+
+I LOVE THIS CHANGE. I am going to keep adding to it.
+=======
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; master</pre></div>
+<p>As you might expect HEAD refers to our current branch.  The line space between
+the string of less-than signs and the string of equals signs represents what our
+current branch thinks that part of the file should look like.  The space between
+the string of equals signs and the string of greater-than signs represents what
+master thinks that part of the file should look like. You can pick one or the
+other side, or write something completely new to resolve the conflict.  In this
+case, we will pick the head side, and modify the file to look like this.</p>
+<div class="highlight highlight-source-shell"><pre><span class="pl-c"><span class="pl-c">#</span> git-it</span>
+A simple project to assist with learning to be effective with Git
+
+
+I LOVE THIS CHANGE. I am going to keep adding to it.</pre></div>
+<p>Once you resolve the conflict, do <code>git add YOURFILENAME</code>. This will stage the
+file and tells git that the conflict has been resolved.  Go through conflicting
+files one-by-one with this process.  When you think you are done, run <code>git status</code>; when all conflicts have been resolved you will see a message that says,
+"All conflicts fixed but you are still merging.  (use "git commit" to conclude
+merge)".  That's exactly what you should do.  This time, just do git commit and
+don't supply a message. A text editor prompt will pop up with a default commit
+message, I recommend keeping the default. Save the file and exit. You are done
+merging.</p>
+<p>Now that we've merged master into our branch, it is a good time to run our test
+suite, and confirm things are still working properly.  If all systems are go,
+it's time to merge our changes into master. Before you do, it might be a good
+time to push local changes to our branch to the remote repository.</p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout master
+$ git pull
+Already up-to-date.
+$ <span class="pl-c"><span class="pl-c">#</span> master is up to date. If this is not true, you may need </span>
+$ <span class="pl-c"><span class="pl-c">#</span> to tell your team to cool it with the pushes to master for</span>
+$ <span class="pl-c"><span class="pl-c">#</span> a hot second. Then repeat the last thing we did -- checkout</span>
+$ <span class="pl-c"><span class="pl-c">#</span> the feature branch, merge master, resolve conflicts.</span>
+$ <span class="pl-c"><span class="pl-c">#</span> then checkout master again and ensure you're up-to-date.</span>
+$ git merge iss1
+Updating 92cda7d..e6465ba
+Fast-forward
+ README.md <span class="pl-k">|</span> 3 +++
+ 1 file changed, 3 insertions(+)</pre></div>
+<p>Excellent. We see a fast-forward.  Since we merged master into the feature
+branch first, the state tree looked like a like a line before the merge.  All
+the merge does is fast forward the pointer for master, so we go from</p>
+<pre><code>x-x-x-x-x-x-x
+    m       f
+</code></pre>
+<p>to</p>
+<pre><code>x-x-x-x-x-x-x
+            m
+            f
+</code></pre>
+<p>Since master and the feature branch now point to the same place in the state
+tree, the feature branch is no longer important. We can push our changes on
+master, then delete the feature branch.</p>
+<div class="highlight highlight-source-shell"><pre>$ git push origin master
+$ git branch -d iss1
+Deleted branch iss1 (was e6465ba).</pre></div>
+<p>Hooray! You're a Git hero.  And that's the pattern you should use whenever
+you're using git.</p>
+<h2>
+<a id="user-content-when-youre-already-screwed" class="anchor" href="#when-youre-already-screwed" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>When you're already screwed</h2>
+<p>So your branch is already borked.  You can use git the right way tomorrow, but
+for today, you just want to get unfucked. I get that.</p>
+<p>Take a deep breath.</p>
+<p>ahh.</p>
+<p>Good. Now, let's get to work. Here are some general guidelines.</p>
+<ol>
+<li>Try not to rewrite history. Don't attempt to permanently get rid of any
+commits unless it's an obvious thing that you'd use git reset --hard for
+like in the examples in the first part.  There are much better ways of
+restoring state to a previous time, without getting rid of history or
+changing it.</li>
+<li>Find the spot where things broke, and take things back to that spot.</li>
+</ol>
+<h3>
+<a id="user-content-i-accidentally-added-a-file-or-bunch-of-files-to-git" class="anchor" href="#i-accidentally-added-a-file-or-bunch-of-files-to-git" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I accidentally added a file (or bunch of files) to git</h3>
+<p>We've all been here. Please don't do <code>git rm</code>! To untrack a file tracked by git
+do <code>git reset FILENAME</code>. Then add it to your .gitignore. Oh, and remove <code>git add -A</code> from your workflow forever.</p>
+<h3>
+<a id="user-content-i-flubbed-my-commit-message" class="anchor" href="#i-flubbed-my-commit-message" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I flubbed my commit message</h3>
+<p>Yea, not a big deal.  <code>git --amend -m "New message"</code></p>
+<p>You can also add a file to a commit with ammend.</p>
+<div class="highlight highlight-source-shell"><pre>git add forgotten_file
+git commit --amend</pre></div>
+<h3>
+<a id="user-content-i-dont-know-where-things-broke" class="anchor" href="#i-dont-know-where-things-broke" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I don't know where things broke</h3>
+<p>Try using <code>git bisect</code>. Mark the bad version, and the last known working version.
+Then allow git bisect to, well, bisect the versions in between until you've
+tracked down the last working version.</p>
+<p><a href="https://git-scm.com/docs/git-bisect" rel="nofollow">docs</a></p>
+<h3>
+<a id="user-content-i-really-do-need-to-rewrite-history" class="anchor" href="#i-really-do-need-to-rewrite-history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I really do need to rewrite history</h3>
+<p>If you committed a file you shouldn't have to a public repository, you may want
+to rewrite history. A common example is commiting a file with database
+credentials to a public repository.</p>
+<p>I personally prefer the example of accidentally commiting an enormous file (like
+an archive file).  Realistically having a db credential pushed to a public repo
+even for a second means the credentials are compromised, and after they are, who
+cares, they must be changed. Once they are changed does it really matter that
+the old credentials were exposed in the git history? Commiting  an enormous file
+is different. It is stuck in the history for eternity, slowing down cloning and
+pushing and bloating the repository size. The file must be removed!</p>
+<div class="highlight highlight-source-shell"><pre>$ git filter-branch --force --index-filter \
+  <span class="pl-s"><span class="pl-pds">'</span>git rm --cached --ignore-unmatch hugefile.gz<span class="pl-pds">'</span></span> \
+  --prune-empty --tag-name-filter cat -- --all</pre></div>
+<p>This will remove the file from every branch and tag.  It will also remove any
+commits that would be empty as a result of the above operation.  <strong>THIS WILL
+REWRITE HISTORY</strong> which can be very annoying.  Only do this if absolutely
+necessary.</p>
+<h3>
+<a id="user-content-i-merged-the-wrong-branch" class="anchor" href="#i-merged-the-wrong-branch" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I merged the wrong branch</h3>
+<p>No worries. do a git reset --hard to the commit before the merge. You won't lose
+anything so long as you keep the branch you merged lying around so it's not
+really destructive.</p>
+<h3>
+<a id="user-content-i-rebased-the-wrong-branch" class="anchor" href="#i-rebased-the-wrong-branch" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I rebased the wrong branch</h3>
+<p>To undo a rebase, check the <a href="https://git-scm.com/docs/git-reflog" rel="nofollow">reflog</a>. Find
+the  find the head commit of the branch as it was immediately before the rebase
+started in the reflog. Then do a git reset --hard. Again, as long as the branch
+you accidentally rebased from still exists, you aren't being overly destructive
+by doing this.</p>
+<div class="highlight highlight-source-shell"><pre>$ git reset --hard HEAD@{5} <span class="pl-c"><span class="pl-c">#</span> 5 signifies 5 operations before HEAD</span></pre></div>
+<h3>
+<a id="user-content-i-dont-know-what-i-did" class="anchor" href="#i-dont-know-what-i-did" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>I don't know what I did</h3>
+<p>When you don't know what you did, sometimes it's best to go back to a place
+where you knew what was going on. Use <code>git log</code> to see your commit history, and
+pick a commit SHA. Just like we did in the first section, go to the top level
+directory of the repository and check out the SHA</p>
+<div class="highlight highlight-source-shell"><pre>$ git checkout SHA-OF-UNDERSTANDING <span class="pl-c1">.</span>
+$ git commit -am <span class="pl-s"><span class="pl-pds">"</span>revert to when I understood<span class="pl-pds">"</span></span></pre></div>
+<p><strong>As before, don't forget the . in the first command.</strong> The cool thing about
+this, is now you still have all your other commits.  Sure they broke things, but
+why throw the baby out with the bath water?</p>
+<p>If you want to go back to a commit, just check it out, then create a branch to
+work on it. When you get things working again, merge it back into the original
+branch.</p>
+<p>maxout.</p>
+<p align="center"><a href="welcome-to-the-ant-hill.html">Prev</a>
+ &lt;&gt; Next</p>
+<hr>
+<p align="center">
+  <a href="https://www.linkedin.com/pub/max-buck/8b/5b8/a9" rel="nofollow">LinkedIn</a>
+  •
+  <a href="resume.html">Resume</a>
+  •
+  <a href="https://github.com/buckmaxwell">GitHub</a>
+</p>
+<hr>
+<p>(c) 2018 <a href="mailto:maxbuckdeveloper@gmail.com">maxbuckdeveloper@gmail.com</a></p>
+
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+  </div>
+  <div>&nbsp;</div>
+  </div><script>
+    function showCanonicalImages() {
+      var images = document.getElementsByTagName('img');
+      if (!images) {
+        return;
+      }
+      for (var index = 0; index < images.length; index++) {
+        var image = images[index];
+        if (image.getAttribute('data-canonical-src') && image.src !== image.getAttribute('data-canonical-src')) {
+          image.src = image.getAttribute('data-canonical-src');
+        }
+      }
+    }
+
+    function scrollToHash() {
+      if (location.hash && !document.querySelector(':target')) {
+        var element = document.getElementById('user-content-' + location.hash.slice(1));
+        if (element) {
+           element.scrollIntoView();
+        }
+      }
+    }
+
+    function autorefreshContent(eventSourceUrl) {
+      var initialTitle = document.title;
+      var contentElement = document.getElementById('grip-content');
+      var source = new EventSource(eventSourceUrl);
+      var isRendering = false;
+
+      source.onmessage = function(ev) {
+        var msg = JSON.parse(ev.data);
+        if (msg.updating) {
+          isRendering = true;
+          document.title = '(Rendering) ' + document.title;
+        } else {
+          isRendering = false;
+          document.title = initialTitle;
+          contentElement.innerHTML = msg.content;
+          showCanonicalImages();
+        }
+      }
+
+      source.onerror = function(e) {
+        if (e.readyState === EventSource.CLOSED && isRendering) {
+          isRendering = false;
+          document.title = initialTitle;
+        }
+      }
+    }
+
+    window.onhashchange = function() {
+      scrollToHash();
+    }
+
+    window.onload = function() {
+      scrollToHash();
+    }
+
+    showCanonicalImages();
+
+    var autorefreshUrl = document.getElementById('preview-page').getAttribute('data-autorefresh-url');
+    if (autorefreshUrl) {
+      autorefreshContent(autorefreshUrl);
+    }
+  </script>
+</body>
+</html>

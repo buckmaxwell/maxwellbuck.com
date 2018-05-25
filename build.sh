@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+if [ -z ${GITHUB_PASS+x} ]
+then
+  echo "PASSWORD IS NOT SET!"
+else
+  echo "password was set to $GITHUB_PASS";
+fi
+
 # set env vars
 export GRIPURL='//./'
 
@@ -12,13 +19,12 @@ do
   # Make HTML files
   html_filename=(${md_filename//.md/.html})
   html_filename=`echo "print '$html_filename'.lower()" | python`
-  echo "entering grippp!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-  grip $md_filename --export --no-inline --user=buckmaxwell --pass=$1 $html_filename
-  echo "grip complete!!!!!!!!!!!!!!!!!!!!!!!"
+  grip $md_filename --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS $html_filename
 done
 
-# Copy HTML files from site to mobile_site
-cp site/*.html mobile_site
+# move grip assets to asset
+cp /root/.grip/cache-4.5.2/* site/asset/
+
 
 # Prettyfy markdown files for raw versions
 cp posts/* site
@@ -29,26 +35,15 @@ do
   mv $discard_fn $md_filename
 done
 
-# Copy markdown files from site to mobile site
-cp site/*.md mobile_site
-
 # Remove created markdown files -- DON'T do this. They are used in the Mobile View.
 #rm site/*.md
 
 # Build resume
-grip "RESUME.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/resume.html"
-cp site/resume.html mobile_site/resume.html
-
 # Build 404
-grip "404.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/404.html"
-cp site/404.html mobile_site/404.html
+grip "404.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/404.html"
 
 # Build Facebook Highlights
-grip "FB-HIGHLIGHTS.md" --export --no-inline --user=buckmaxwell --pass=$1 "site/fb-highlights.html"
-cp site/fb-highlights.html mobile_site/fb_highlights.html
-
-# Copy images to mobile_site directory
-cp -a site/images mobile_site/
+grip "FB-HIGHLIGHTS.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/fb-highlights.html"
 
 
 # Resize images and add to thumbnail directory -- faster page load on index 
@@ -64,9 +59,6 @@ do
   # probably just not an image file.
 	convert -quiet $file -resize $WIDTHx$HEIGHT\> site/thumbs/${file##*/} 2> /dev/null
 done
-
-# Copy thumbnails to mobile site
-cp -a site/thumbs mobile_site/
 
 
 # Gzip all html, md, and css files. Don't touch image files which can grow when
@@ -89,7 +81,11 @@ done
 cp -a site/static zipped_site
 cp -a site/images zipped_site
 cp -a site/thumbs zipped_site
-# DONE with site compression
+cp -a site/asset zipped_site
+
+# unzip index page
+[ -f zipped_site/index.html ] && rm zipped_site/index.html
+gunzip zipped_site/index.html.gz
 
 
 

@@ -41,6 +41,11 @@ h2><img                                 title="thumbnail-img" align="middle" src
 ="thumbs/ant.png" width="100" height="100"                                      
    hspace="10" ><a href=welcome-to-the-ant-hill.html>I think we should be more a
 nt-like!  </a></h2>
+<p title="post-date"                                 align=right>02.24.2018</p><
+h2><img                                 title="thumbnail-img" align="middle" src
+="thumbs/ant.png" width="100" height="100"                                      
+   hspace="10" ><a href=do-you-suck-at-explaining-things.html>Your job is exciti
+ng, but your dinner convo isn't</a></h2>
 <p title="post-date"                                 align=right>12.10.2016</p><
 h2><img                                 title="thumbnail-img" align="middle" src
 ="thumbs/Google-Big-Brother.png" width="100" height="100"                       
