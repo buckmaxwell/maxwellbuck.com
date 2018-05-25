@@ -69,7 +69,10 @@ do
   if [ "$1" == "staging" ]
   then
     # convert links to staging links on staging 
-    ex -c "%s/href=\"\//href=\"\/staging\//g" -cwq $file 
+    if [[ -f "$file" ]]
+    then
+      ex -c "%s/href=\"\//href=\"\/staging\//g" -cwq $file 
+    fi
   fi
   # file could be a directory, if so ignore error
   gzip < $file > zipped_site/${file##*/}.gz 2> /dev/null 
