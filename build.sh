@@ -23,6 +23,7 @@ do
 done
 
 # move grip assets to asset
+
 cp /root/.grip/cache-4.5.2/* site/asset/
 
 
@@ -89,7 +90,7 @@ done
 cp -a site/static zipped_site
 cp -a site/images zipped_site
 cp -a site/thumbs zipped_site
-cp -a site/asset zipped_site
+#cp -a site/asset zipped_site
 
 # unzip index page
 [ -f zipped_site/index.html ] && rm zipped_site/index.html
