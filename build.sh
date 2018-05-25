@@ -67,13 +67,9 @@ done
 # Compress html and markdown files
 for file in site/*
 do
-  if [ "$1" == "staging" ]
+  if [[ -f "$file" ]]
   then
-    # convert links to staging links on staging 
-    if [[ -f "$file" ]]
-    then
-      ex -c "%s/href=\"\//href=\"\/staging\//g" -cwq $file 
-    fi
+    ex -c "%s/href=\"\/asset\//href=\"https:\/\/assets-cdn.github.com\/assets\//g" -cwq $file 
   fi
   # file could be a directory, if so ignore error
   gzip < $file > zipped_site/${file##*/}.gz 2> /dev/null 
