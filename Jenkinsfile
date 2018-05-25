@@ -18,6 +18,17 @@ pipeline {
 
                 sh 'echo "Cloning repository..."'
                 script {
+                  if ("$env.BRANCH_NAME" == 'master') {
+                    sh 'echo "executing master flow..."'
+                  }
+                  else if ("$env.BRANCH_NAME" == 'develop') {
+                    sh 'echo "executing develop flow..."'
+                  }
+                  else {
+                    sh 'echo "executing branch non-specific flow..."'
+                  }
+                }
+                script {
                   try {
                     sh 'rm -r maxwellbuck.com'
                   }
