@@ -25,7 +25,7 @@ pipeline {
                     sh 'echo "Cloning..."' 
                   }
                 }
-                /* WEBHOOK TEST 3*/
+                /* WEBHOOK TEST 4*/
 
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
