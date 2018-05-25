@@ -33,11 +33,16 @@ pipeline {
                 sh 'pip install grip==4.5.2'
 
                 sh 'echo "Running build script..."'
-                sh './build.sh'
+                script {
+                  if ("$env.BRANCH_NAME" == 'develop') {
+                    sh './build.sh staging'
+                  }
+                  else {
+                    sh './build.sh'
+                  }
+                }
                 sh 'echo "Build successful!"'
-
                 stash includes: 'zipped_site/*', name: 'site_stash'
-
             }
         }
         stage('test') {
@@ -55,6 +60,7 @@ pipeline {
                 script {
                   if ("$env.BRANCH_NAME" == 'master') {
                     sh 'echo "Deploying maxwellbuck.com..."'
+                    sh 'echo "Translating urls to staging versions..."'
                     sh 'echo "Copying site into place..."'
                     sshagent (credentials: ['build-ssh']) {
                       sh 'scp -o StrictHostKeyChecking=no -r zipped_site/* max@maxwellbuck.com:/var/www/html'
