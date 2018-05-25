@@ -18,17 +18,6 @@ pipeline {
 
                 sh 'echo "Cloning repository..."'
                 script {
-                  if ("$env.BRANCH_NAME" == 'master') {
-                    sh 'echo "executing master flow..."'
-                  }
-                  else if ("$env.BRANCH_NAME" == 'develop') {
-                    sh 'echo "executing develop flow..."'
-                  }
-                  else {
-                    sh 'echo "executing branch non-specific flow..."'
-                  }
-                }
-                script {
                   try {
                     sh 'rm -r maxwellbuck.com'
                   }
@@ -36,7 +25,6 @@ pipeline {
                     sh 'echo "Cloning..."' 
                   }
                 }
-                /* WEBHOOK TEST 5*/
 
                 sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
 
@@ -48,23 +36,42 @@ pipeline {
                 sh './build.sh'
                 sh 'echo "Build successful!"'
 
+                stash includes: 'zipped_site/*', name: 'site_stash'
 
-                sh 'echo "Copying site to host..."'
-                sshagent (credentials: ['build-ssh']) {
-                  sh 'scp -o StrictHostKeyChecking=no -r zipped_site/* max@maxwellbuck.com:/var/www/html/staging'
-                }
-                sh 'echo "Staging successfully deployed..."'
             }
         }
         stage('test') {
             steps {
                 sh 'echo "Beginnning TEST..."'
+                unstash 'site_stash'
+                sh 'cd zipped_site'
+                sh 'cd ..'
+                sh 'echo "stash successfully opened"'
             }
         }
         stage('deploy') {
             steps {
-                sh 'echo "Deploying maxwellbuck.com..."'
-                sh 'echo "Success! maxwellbuck.com has been deployed."'
+                unstash 'site_stash'
+                script {
+                  if ("$env.BRANCH_NAME" == 'master') {
+                    sh 'echo "Deploying maxwellbuck.com..."'
+                    sh 'echo "Copying site into place..."'
+                    sshagent (credentials: ['build-ssh']) {
+                      sh 'scp -o StrictHostKeyChecking=no -r zipped_site/* max@maxwellbuck.com:/var/www/html'
+                    }
+                    sh 'echo "Success! maxwellbuck.com has been deployed."'
+                  }
+                  else if ("$env.BRANCH_NAME" == 'develop') {
+                    sh 'echo "Copying site to staging directory..."'
+                    sshagent (credentials: ['build-ssh']) {
+                      sh 'scp -o StrictHostKeyChecking=no -r zipped_site/* max@maxwellbuck.com:/var/www/html/staging'
+                    }
+                    sh 'echo "Staging successfully deployed!"'
+                  }
+                  else {
+                    sh 'echo "deploy stage ignored; you are not on master or develop."'
+                  }
+                }
             }
         }
 
