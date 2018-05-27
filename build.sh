@@ -88,6 +88,11 @@ done
 
 # Move images to zipped site
 cp -a site/static zipped_site
+for file in zipped_site/static/*
+do
+  # sanity check
+  echo $file 
+done
 cp -a site/images zipped_site
 cp -a site/thumbs zipped_site
 #cp -a site/asset zipped_site
