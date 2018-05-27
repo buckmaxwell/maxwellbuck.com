@@ -42,8 +42,10 @@ pipeline {
                   }
                 }
 
+                
                 sh 'echo "Build successful!"'
                 stash includes: 'zipped_site/', name: 'site_stash'
+                stash includes: 'nginx_config/', name: 'nginx_stash'
             }
         }
         stage('test') {
@@ -60,6 +62,7 @@ pipeline {
         stage('deploy') {
             steps {
                 unstash 'site_stash'
+                unstash 'nginx_stash'
                 script {
                   if ("$env.BRANCH_NAME" == 'master') {
                     sh 'echo "Deploying maxwellbuck.com..."'
@@ -67,6 +70,7 @@ pipeline {
                     sh 'echo "Copying site into place..."'
                     sshagent (credentials: ['build-ssh']) {
                       sh 'scp -o StrictHostKeyChecking=no -r zipped_site/* max@maxwellbuck.com:/var/www/html'
+                      sh 'scp -o StrictHostKeyChecking=no -r nginx_config/* max@maxwellbuck.com:/etc/nginx/sites-enabled'
                     }
                     sh 'echo "Success! maxwellbuck.com has been deployed."'
                   }
@@ -74,6 +78,7 @@ pipeline {
                     sh 'echo "Copying site to staging directory..."'
                     sshagent (credentials: ['build-ssh']) {
                       sh 'scp -o StrictHostKeyChecking=no -r zipped_site/* max@maxwellbuck.com:/var/www/html/staging'
+                      sh 'scp -o StrictHostKeyChecking=no -r nginx_config/* max@maxwellbuck.com:/etc/nginx/sites-enabled'
                     }
                     sh 'echo "Staging successfully deployed!"'
                   }
@@ -81,6 +86,7 @@ pipeline {
                     sh 'echo "deploy stage ignored; you are not on master or develop."'
                   }
                 }
+                sh "sudo /var/lib/jenkins/restart-nginx.sh"
             }
         }
 
