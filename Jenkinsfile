@@ -45,7 +45,7 @@ pipeline {
                 sh 'ls zipped_site/static'
 
                 sh 'echo "Build successful!"'
-                stash includes: 'zipped_site/*', name: 'site_stash'
+                stash includes: 'zipped_site/', name: 'site_stash'
             }
         }
         stage('test') {
