@@ -4,7 +4,7 @@ if [ -z ${GITHUB_PASS+x} ]
 then
   echo "PASSWORD IS NOT SET!"
 else
-  echo "password was set to $GITHUB_PASS";
+  echo "password was set.";
 fi
 
 # set env vars
@@ -23,7 +23,7 @@ do
 done
 
 # move grip assets to asset
-cp /root/.grip/cache-4.5.2/* site/asset/
+#cp /root/.grip/cache-4.5.2/* site/asset/
 
 
 # Prettyfy markdown files for raw versions
@@ -41,6 +41,10 @@ done
 # Build resume
 # Build 404
 grip "404.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/404.html"
+
+# Build 401
+grip "401.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/401.html"
+
 
 # Build Facebook Highlights
 grip "FB-HIGHLIGHTS.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/fb-highlights.html"
@@ -66,6 +70,14 @@ done
 # Compress html and markdown files
 for file in site/*
 do
+  if [[ -f "$file" ]]
+  then
+    ex -c "%s/href=\"\/asset\//href=\"https:\/\/assets-cdn.github.com\/assets\//g" -cwq $file 
+    if [[ $1 == 'staging' ]]
+    then
+      ex -c "%s/<h3>\_.*<span class=\"octicon octicon-book\"><\/span>/<h3>\r<span class=\"octicon octicon-book\"><\/span>(staging) /g" -cwq $file 
+    fi
+  fi
   # file could be a directory, if so ignore error
   gzip < $file > zipped_site/${file##*/}.gz 2> /dev/null 
 done
@@ -81,7 +93,7 @@ done
 cp -a site/static zipped_site
 cp -a site/images zipped_site
 cp -a site/thumbs zipped_site
-cp -a site/asset zipped_site
+#cp -a site/asset zipped_site
 
 # unzip index page
 [ -f zipped_site/index.html ] && rm zipped_site/index.html

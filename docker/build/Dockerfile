@@ -9,3 +9,4 @@ RUN apt-get install -y python-pip
 RUN apt-get install -y perl
 RUN apt-get install -y git
 RUN apt-get install -y imagemagick
+RUN apt-get install -y vim
