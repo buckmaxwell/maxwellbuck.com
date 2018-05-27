@@ -43,6 +43,10 @@ done
 # Build 404
 grip "404.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/404.html"
 
+# Build 401
+grip "401.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/401.html"
+
+
 # Build Facebook Highlights
 grip "FB-HIGHLIGHTS.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/fb-highlights.html"
 
