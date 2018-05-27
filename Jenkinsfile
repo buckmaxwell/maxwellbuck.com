@@ -86,7 +86,7 @@ pipeline {
                     sh 'echo "deploy stage ignored; you are not on master or develop."'
                   }
                 }
-                sh "sudo bash /var/lib/jenkins/jobs/maxwellbuck.com/scripts/restart-nginx.sh"
+                sh "sudo /var/lib/jenkins/jobs/maxwellbuck.com/scripts/restart-nginx.sh"
             }
         }
 
