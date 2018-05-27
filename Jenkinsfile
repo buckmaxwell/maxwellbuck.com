@@ -41,8 +41,6 @@ pipeline {
                     sh './build.sh'
                   }
                 }
-                sh 'echo "listing contents of static"'
-                sh 'ls zipped_site/static'
 
                 sh 'echo "Build successful!"'
                 stash includes: 'zipped_site/', name: 'site_stash'

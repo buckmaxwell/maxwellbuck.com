@@ -4,7 +4,7 @@ if [ -z ${GITHUB_PASS+x} ]
 then
   echo "PASSWORD IS NOT SET!"
 else
-  echo "password was set to $GITHUB_PASS";
+  echo "password was set.";
 fi
 
 # set env vars
@@ -23,8 +23,7 @@ do
 done
 
 # move grip assets to asset
-
-cp /root/.grip/cache-4.5.2/* site/asset/
+#cp /root/.grip/cache-4.5.2/* site/asset/
 
 
 # Prettyfy markdown files for raw versions
@@ -74,6 +73,10 @@ do
   if [[ -f "$file" ]]
   then
     ex -c "%s/href=\"\/asset\//href=\"https:\/\/assets-cdn.github.com\/assets\//g" -cwq $file 
+    if [[ $1 == 'staging' ]]
+    then
+      ex -c "%s/<h3>\_.*<span class=\"octicon octicon-book\"><\/span>/<h3>\r<span class=\"octicon octicon-book\"><\/span>(staging) /g" -cwq $file 
+    fi
   fi
   # file could be a directory, if so ignore error
   gzip < $file > zipped_site/${file##*/}.gz 2> /dev/null 
@@ -88,11 +91,6 @@ done
 
 # Move images to zipped site
 cp -a site/static zipped_site
-for file in zipped_site/static/*
-do
-  # sanity check
-  echo $file 
-done
 cp -a site/images zipped_site
 cp -a site/thumbs zipped_site
 #cp -a site/asset zipped_site
