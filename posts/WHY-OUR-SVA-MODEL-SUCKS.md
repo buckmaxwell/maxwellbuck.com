@@ -1,5 +1,5 @@
 
-# Why our Subject Verb Agreement Model Sucks.
+# Why our Subject Verb Agreement model sucks
 
 **taken from [Quill.org's repository](https://github.com/empirical-org/Quill-NLP-Tools-and-Datasets/blob/iss74/sva-error-detection-eval/utils/qfragment/qfragment/WHY_OUR_SVA_MODEL_SUCKS.md)** 
 

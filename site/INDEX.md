@@ -31,6 +31,21 @@ ou'll indulge in. Enjoy.
 ---
 
 
+<p title="post-date"                                 align=right>05.28.2018</p><
+h2><img                                 title="thumbnail-img" align="middle" src
+="thumbs/sva2.jpg" width="100" height="100"                                     
+    hspace="10" ><a href=lets-talk-pretty.html>I have been using tensorflow to d
+etect subject verb agreement errors </a></h2>
+<p title="post-date"                                 align=right>05.28.2018</p><
+h2><img                                 title="thumbnail-img" align="middle" src
+="thumbs/jenkins.png" width="100" height="100"                                  
+       hspace="10" ><a href=lets-continuously-integrate.html>Let's Continuously 
+Integrate</a></h2>
+<p title="post-date"                                 align=right>05.08.2018</p><
+h2><img                                 title="thumbnail-img" align="middle" src
+="thumbs/sva.jpg" width="100" height="100"                                      
+   hspace="10" ><a href=why-our-sva-model-sucks.html>Why our Subject Verb Agreem
+ent Model Sucks.</a></h2>
 <p title="post-date"                                 align=right>03.06.2018</p><
 h2><img                                 title="thumbnail-img" align="middle" src
 ="thumbs/git.png" width="100" height="100"                                      
@@ -41,11 +56,6 @@ h2><img                                 title="thumbnail-img" align="middle" src
 ="thumbs/ant.png" width="100" height="100"                                      
    hspace="10" ><a href=welcome-to-the-ant-hill.html>I think we should be more a
 nt-like!  </a></h2>
-<p title="post-date"                                 align=right>02.24.2018</p><
-h2><img                                 title="thumbnail-img" align="middle" src
-="thumbs/ant.png" width="100" height="100"                                      
-   hspace="10" ><a href=do-you-suck-at-explaining-things.html>Your job is exciti
-ng, but your dinner convo isn't</a></h2>
 <p title="post-date"                                 align=right>12.10.2016</p><
 h2><img                                 title="thumbnail-img" align="middle" src
 ="thumbs/Google-Big-Brother.png" width="100" height="100"                       
