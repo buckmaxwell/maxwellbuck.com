@@ -7,5 +7,6 @@ zipped_site/*
 !zipped_site/*.md
 site/thumbs/*
 !site/thumbs/*.md
+drafts
 
 maxwellbuck.pub

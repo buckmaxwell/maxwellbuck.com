@@ -17,12 +17,18 @@ server {
 	rewrite ^/index.php/2015/09/29/background-by-reddit/?$ /background-by-reddit.html permanent;
 
 	location / {
+    if ($http_user_agent ~ (GoogleMobile/*|Java/*|Python-urllib/*|Python/*|crawler4j|libwww-perl/*|python-requests/*)) {
+      return 455;
+    }
+  
+
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		# try_files $uri $uri/ =404;
 	}
 	error_page  404              /404.html;
 	error_page  401              /401.html;
+	error_page  455              /455.txt;
 
 	location ~*  \.(jpg|jpeg|png|gif|ico|css|js)$ {
     expires 365d;

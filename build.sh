@@ -45,6 +45,9 @@ grip "404.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/
 # Build 401
 grip "401.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/401.html"
 
+# Move 455 (error for bots)
+cp "455.txt" "site/455.txt"
+
 
 # Build Facebook Highlights
 grip "FB-HIGHLIGHTS.md" --export --no-inline --user=buckmaxwell --pass=$GITHUB_PASS "site/fb-highlights.html"

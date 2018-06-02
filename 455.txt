@@ -1,0 +1,4 @@
+
+You look like a bot. Hi bot :D If you want to scrape this site, change your user
+agent to something unique and fun instead of using the default one that comes
+with your web scraping tool.
