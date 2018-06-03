@@ -15,6 +15,7 @@ pipeline {
             }
             steps {
                 sh 'echo "Beginning BUILD..."'
+                sh 'printenv'
 
                 sh 'echo "Installing python requirements..."'
                 sh 'pip install grip==4.5.2'
