@@ -12,6 +12,7 @@ pipeline {
             }
             environment {
                 GITHUB_PASS = credentials('github-pass')
+                FAKE_ENV = "fakeFAKEfake"
             }
             steps {
                 sh 'echo "Beginning BUILD..."'
