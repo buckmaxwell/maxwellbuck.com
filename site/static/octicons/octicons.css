@@ -4,15 +4,14 @@
   fill: currentColor;
 }
 
-.cxx5 {
+[title=cxx5] img {
+  margin-right: 15px;
+  float: left;
+}
+[title=cxx5] {
   width: 100%;
   border-top: 1px dotted lightgrey;
   padding: 20px;
   padding-left: 0px;
   overflow: hidden;
-}
-
-.cxx5 img {
-  margin-right: 15px;
-  float: left;
 }

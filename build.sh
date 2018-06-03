@@ -86,12 +86,14 @@ do
     if [[ $1 == 'staging' ]]
     then
       ex -c "%s/<h3>\_.*<span class=\"octicon octicon-book\"><\/span>/<h3>\r<span class=\"octicon octicon-book\"><\/span>(staging) /g" -cwq $file 
-      ex -c "%s/\/static\//\/staging\/static\//g" -cwq $file
     fi
   fi
   # file could be a directory, if so ignore error
   gzip < $file > zipped_site/${file##*/}.gz 2> /dev/null 
 done
+
+# change octicons to relative path
+ex -c "%s/\/static\//static\//g" -cwq site/index.html 
 
 # Compress css files
 for file in site/asset/*

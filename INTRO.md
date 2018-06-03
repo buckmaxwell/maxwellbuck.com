@@ -8,4 +8,3 @@ Occassional ramblings from me, Max. I am a programmer, poet, and a friendly litt
 <p align="right"><img src="static/hi.png" height="200"></p>
 
 
----

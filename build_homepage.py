@@ -48,7 +48,7 @@ def get_post_links():
 	posts = ""
 	post_list = []
 	for fn in listdir("./posts"):
-                basepost = '<div class="cxx5"> <p title="post-date" align="right">{date}</p> <img title="thumbnail-img" align="middle" src="thumbs/{img}" width="100" height="100" hspace="10" style="max-width:100%;"> <h3><a href="{url}">{title}</a></h3> <p>{descrip}</p> </div>'
+                basepost = '<div title="cxx5"> <p title="post-date" align="right">{date}</p> <img title="thumbnail-img" align="middle" src="thumbs/{img}" width="100" height="100" hspace="10" style="max-width:100%;"> <h3><a href="{url}">{title}</a></h3> <p>{descrip}</p> </div>'
                 basepost = basepost.replace('\n', '')
 		if fn.endswith(".md"):
 			with open("./posts/{}".format(fn), "r") as f:
