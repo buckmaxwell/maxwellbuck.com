@@ -11,10 +11,6 @@ pipeline {
                     additionalBuildArgs  '--build-arg GITHUB_PASS=$GITHUB_PASS'
                 }
             }
-            environment {
-                GITHUB_PASS = credentials('github-pass')
-                FAKE_ENV = "fakeFAKEfake"
-            }
             steps {
                 sh 'echo "Beginning BUILD..."'
                 sh 'printenv'
