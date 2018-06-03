@@ -28,24 +28,24 @@ server {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		# try_files $uri $uri/ =404;
+    location ~*  \.(jpg|jpeg|png|gif|ico|css|js)$ {
+      expires 365d;
+    }
+    
+    location ~* \.(html|md)$ {
+      expires 5m;
+    }
+    
+    location ^~ /staging/ {
+      auth_basic "Restricted Content";
+      auth_basic_user_file /etc/nginx/.htpasswd;
+      error_page  404              /staging/404.html;
+      error_page  401              /staging/401.html;
+      #allow 127.0.0.1;
+      #deny all;
+    }
 	}
 
-	location ~*  \.(jpg|jpeg|png|gif|ico|css|js)$ {
-    expires 365d;
-	}
-	
-	location ~* \.(html|md)$ {
-		expires 5m;
-	}
-  
-  location ^~ /staging/ {
-    auth_basic "Restricted Content";
-    auth_basic_user_file /etc/nginx/.htpasswd;
-    error_page  404              /staging/404.html;
-    error_page  401              /staging/401.html;
-    #allow 127.0.0.1;
-    #deny all;
-  }
   location = /staging/404.html {}
   location = /staging/401.html {}
   location = /staging/455.txt {}
