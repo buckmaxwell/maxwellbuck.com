@@ -201,3 +201,4 @@ Max Buck, Quill.org.
 
 date=20180508
 ftimage=sva.jpg
+descrip=As I worked with Google's TensorFlow to detect subject-verb agreement errors in student sentences, I ran into some issues - most of them at the english language level.

@@ -53,3 +53,4 @@ maxout.
 
 date=20180224
 ftimage=ant.png
+descrip=Ants max out their efficiency and avoid central rule by relying on trust.  Could we learn something from them?

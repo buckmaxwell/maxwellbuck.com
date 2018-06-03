@@ -19,3 +19,4 @@ Sample Project: https://github.com/buckmaxwell/sample-neo-api
 
 ftimage=graphdb.png
 date=20150915
+descrip=I continue to explore a new convention for implementing RESTful APIs.

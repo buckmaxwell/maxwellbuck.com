@@ -530,5 +530,4 @@ branch.
 
 maxout.
 
-date=20180306
-ftimage=git.png
+ Here is my opinionated flow, some tips, and the reasons I like it.

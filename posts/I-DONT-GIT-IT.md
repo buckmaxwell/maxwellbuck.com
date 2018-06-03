@@ -490,3 +490,4 @@ maxout.
 
 date=20180306
 ftimage=git.png
+descrip=You know git is the right tool, but you don't know if you use it right.  Here is my opinionated flow, some tips, and the reasons I like it.

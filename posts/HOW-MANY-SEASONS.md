@@ -30,3 +30,4 @@ We can think of Spring as the season where the earth is cold, but the days are l
 
 ftimage=seasons-ftimage.jpg
 date=20160920
+descrip=I couldn't wrap my head around why there are four seasons and not just 2. Here are my synthesized thoughts.

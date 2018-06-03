@@ -63,5 +63,3 @@ it&name=zipcode) and on https://github.com/buckmaxwell/zipcode.
 Update 9/14/2015:  I've added some new functionality.  The docs are up on http:/
 /pythonhosted.org/zipcode/.
 
-date=20150914
-ftimage=ohio-3-digit-zip-code-map.gif

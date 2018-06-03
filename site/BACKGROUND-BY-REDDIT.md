@@ -28,5 +28,4 @@ er, and watch with delight as they try to figure out where all these pictures of
 
 https://github.com/buckmaxwell/background-by-reddit
 
-ftimage=redditapi.png
-date=20150929
+s as a desktop background.

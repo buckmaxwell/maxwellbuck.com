@@ -46,5 +46,8 @@ If you haven't set your browser to do differently, it will remember this cookie 
 
 
 
+ 
+
 date=20161210
 ftimage=Google-Big-Brother.png
+descrip=Is tossing google analytics on your page really a good idea? Everything it collects is in your nginx access log and more.

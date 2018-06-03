@@ -33,3 +33,4 @@ Update 9/14/2015:  I've added some new functionality.  The docs are up on http:/
 
 date=20150914
 ftimage=ohio-3-digit-zip-code-map.gif
+descrip=I built a python package for extracting information from zipcodes.

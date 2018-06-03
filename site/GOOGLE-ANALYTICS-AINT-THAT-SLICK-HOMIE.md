@@ -95,5 +95,6 @@ s and critiques.
 
 
 
-date=20161210
-ftimage=Google-Big-Brother.png
+ 
+
+it collects is in your nginx access log and more.

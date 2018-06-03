@@ -113,5 +113,3 @@ r way, if you are interested in testing, using, or contributing to either of tho
 se projects, please let me know.  I am very excited about this well thought out 
 and widely applicable standard. Ω
 
-ftimage=jsonapiftimage.png
-date=20150910

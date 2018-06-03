@@ -13,3 +13,4 @@ https://github.com/buckmaxwell/background-by-reddit
 
 ftimage=redditapi.png
 date=20150929
+descrip=I wrote a lightweight script for streaming your favorite image subreddits as a desktop background.

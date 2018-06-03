@@ -57,5 +57,5 @@ ub but is less legible.*
 
 
 
-date=20161130
-ftimage=countries-of-the-world.jpg
+
+y their references to each other on Wikipedia, the results are pretty neat. 

@@ -39,3 +39,4 @@ First up on that list – parallelization and not rebuiling unmodified pages.
 
 date=20180528
 ftimage=jenkins.png
+descrip=Using Jenkins multi-branch piplelines to increase confidence in my deploys.

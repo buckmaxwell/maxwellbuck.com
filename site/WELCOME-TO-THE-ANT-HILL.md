@@ -160,5 +160,4 @@ like you're LeBron James.](https://www.youtube.com/watch?v=s62H3MFIW6s)
 
 maxout.
 
-date=20180224
-ftimage=ant.png
+.  Could we learn something from them?

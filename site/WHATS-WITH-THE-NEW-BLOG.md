@@ -89,5 +89,5 @@ the new files to the git repository, and push.  It's awesome.
 
 
 
-date=20161204
-ftimage=fuck-wordpress.jpg
+
+own static file CMS. What gives? 

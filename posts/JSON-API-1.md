@@ -29,3 +29,4 @@ So you are wondering about my magic class.  Yea, it's dope.  I haven't yet publi
 
 ftimage=jsonapiftimage.png
 date=20150910
+descrip=I explore a new convention for implementing RESTful APIs.

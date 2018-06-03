@@ -40,5 +40,3 @@ NeoAPI: https://github.com/buckmaxwell/neoapi
 Sample Project: https://github.com/buckmaxwell/sample-neo-api
 
 
-ftimage=graphdb.png
-date=20150915

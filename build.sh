@@ -75,7 +75,14 @@ for file in site/*
 do
   if [[ -f "$file" ]]
   then
-    ex -c "%s/href=\"\/asset\//href=\"https:\/\/assets-cdn.github.com\/assets\//g" -cwq $file 
+    if [[ $file == *.html ]]
+    then
+      ex -c "%s/href=\"\/asset\//href=\"https:\/\/assets-cdn.github.com\/assets\//g" -cwq $file 
+      PAGE_TITLE=$(echo $file | sed 's/-/ /g' | sed 's/\.html//g' | sed 's/site\///g' | sed 's/\///g')
+      MD_ORIG=$(echo $file | tr a-z A-Z | sed 's/\.HTML/\.md/g' | sed 's/SITE\//site\//g')
+      DESCRIPTION=$(printf "from build_homepage import meta_inf_dic, remove_meta_info_lines\nprint(meta_inf_dic(remove_meta_info_lines(\"${MD_ORIG}\")).get('descrip', 'A Clevelander living in New York reflects on software and life.'))" | python)
+      ex -c "%s/<title>.*<\/title>/<title>$PAGE_TITLE<\/title><meta name='description' content=\"${DESCRIPTION}\">/g" -cwq $file
+    fi
     if [[ $1 == 'staging' ]]
     then
       ex -c "%s/<h3>\_.*<span class=\"octicon octicon-book\"><\/span>/<h3>\r<span class=\"octicon octicon-book\"><\/span>(staging) /g" -cwq $file 

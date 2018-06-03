@@ -48,10 +48,13 @@ def get_post_links():
 	posts = ""
 	post_list = []
 	for fn in listdir("./posts"):
+                basepost = '<div class="cxx5"> <p title="post-date" align="right">{date}</p> <img title="thumbnail-img" align="middle" src="thumbs/{img}" width="100" height="100" hspace="10" style="max-width:100%;"> <h3><a href="{url}">{title}</a></h3> <p>{descrip}</p> </div>'
+                basepost = basepost.replace('\n', '')
 		if fn.endswith(".md"):
 			with open("./posts/{}".format(fn), "r") as f:
 			
 				ftimage = "default.png"
+                                descrip = 'A Clevelander living in New York reflects on software and life.'
 				title = "Untitled"
 				date = int(datetime.strftime(datetime.now(), '%Y%m%d'))
 				url = fn.lower().replace('.md', '.html')
@@ -69,13 +72,14 @@ def get_post_links():
 					if line.startswith("date="):
 						date = int(line.split("date=")[1].strip())
 
+					# get descrip
+					if line.startswith("descrip="):
+						descrip = line.split("descrip=")[1].strip()
+
 				rd = str(date)
 				readabledate = rd[4:6] +'.' + rd[6:8] + '.' + rd[0:4] 
-				post_list.append( ('<p title="post-date" \
-                                align=right>{date}</p><h2><img \
-                                title="thumbnail-img" align="middle" src="thumbs/{img}" width="100" height="100" \
-                                        hspace="10" ><a href={url}>{title}</a></h2>\n'.format(img=ftimage, title=title,
-				  url=url, date=readabledate), date) )
+                                post_list.append( ( basepost.format(img=ftimage, title=title, url=url, date=readabledate, descrip=descrip), date) )
+                                #post_list.append( ( '<p>Hi!</p>', date) )
 
 	post_list.sort(key=itemgetter(1), reverse=True)
 	for post, _ in post_list:
@@ -94,8 +98,17 @@ def build_index(base, intro, posts, filename="INDEX.md"):
 		index = base.format(intro=intro, body=posts, year=datetime.now().year, raw=filename)
 		f.write(index)
 
+def meta_inf_dic(list_of_lines):
+    '''given result of remove metainfolines return a dict'''
+    result ={}
+    for l in list_of_lines:
+        k,v = l.split('=')
+        result[k]=v
+    return result
+
+
 def remove_meta_info_lines(filename):
-	metainfolines = ['ftimage', 'date']
+	metainfolines = ['ftimage', 'date', 'descrip']
 	removed_lines = []
 	with open(filename,"r") as f:
 		lines = f.readlines()

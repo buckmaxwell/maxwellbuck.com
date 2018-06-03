@@ -18,5 +18,7 @@ The size of the nodes is based on the in-degree, or number of times other countr
 
 
 
+
 date=20161130
 ftimage=countries-of-the-world.jpg
+descrip=Probably my favorite data visualization project. I clustered countries by their references to each other on Wikipedia, the results are pretty neat. 

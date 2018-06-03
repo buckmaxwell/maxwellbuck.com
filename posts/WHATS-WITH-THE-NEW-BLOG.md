@@ -42,5 +42,7 @@ For ease of use and price I moved the site to Heroku.  The site is currently on 
 
 
 
+
 date=20161204
 ftimage=fuck-wordpress.jpg
+descrip=I ripped up my Wordpress site and replaced it with a skeletal roll-your-own static file CMS. What gives? 

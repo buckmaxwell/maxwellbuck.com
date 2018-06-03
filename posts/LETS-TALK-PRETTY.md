@@ -87,3 +87,4 @@ Max
 
 date=20180528
 ftimage=sva2.jpg
+descrip=I have been spending the past few months using tensorflow to train natural language models. Here are some things I've learned.

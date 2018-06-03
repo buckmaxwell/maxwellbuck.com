@@ -73,5 +73,4 @@ hot but the days are short.  And in Winter, the days are short, and the earth is
 
 
 
-ftimage=seasons-ftimage.jpg
-date=20160920
+. Here are my synthesized thoughts.
