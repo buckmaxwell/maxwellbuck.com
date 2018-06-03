@@ -16,19 +16,19 @@ server {
 	rewrite ^/index.php/2016/09/20/how-many-seasons-are-there-really/?$ /how-many-seasons.html permanent;
 	rewrite ^/index.php/2015/09/29/background-by-reddit/?$ /background-by-reddit.html permanent;
 
-	location / {
+
+	error_page  404              /404.html;
+	error_page  401              /401.html;
+	error_page  455              /455.txt;
+
+  location ^~ / {
     if ($http_user_agent ~ (GoogleMobile/*|Java/*|Python-urllib/*|Python/*|crawler4j|libwww-perl/*|python-requests/*)) {
       return 455;
     }
-  
-
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		# try_files $uri $uri/ =404;
 	}
-	error_page  404              /404.html;
-	error_page  401              /401.html;
-	error_page  455              /455.txt;
 
 	location ~*  \.(jpg|jpeg|png|gif|ico|css|js)$ {
     expires 365d;
@@ -48,6 +48,8 @@ server {
   }
   location = /staging/404.html {}
   location = /staging/401.html {}
+  location = /staging/455.txt {}
+  location = /455.txt {}
   location ^~ /staging/static/ {}
   
 

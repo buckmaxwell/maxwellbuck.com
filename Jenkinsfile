@@ -16,20 +16,7 @@ pipeline {
             steps {
                 sh 'echo "Beginning BUILD..."'
 
-                sh 'echo "Cloning repository..."'
-                script {
-                  try {
-                    sh 'rm -r maxwellbuck.com'
-                  }
-                  catch (exc) {
-                    sh 'echo "Cloning..."' 
-                  }
-                }
-
-                sh 'git clone https://github.com/buckmaxwell/maxwellbuck.com.git'
-
                 sh 'echo "Installing python requirements..."'
-                sh 'cd maxwellbuck.com'
                 sh 'pip install grip==4.5.2'
 
                 sh 'echo "Running build script..."'
@@ -44,14 +31,11 @@ pipeline {
 
                 
                 sh 'echo "Build successful!"'
-                stash includes: 'zipped_site/', name: 'site_stash'
-                stash includes: 'nginx_config/', name: 'nginx_stash'
             }
         }
         stage('test') {
             steps {
                 sh 'echo "Beginnning TEST..."'
-                unstash 'site_stash'
                 sh 'cd zipped_site'
                 sh 'cd ..'
                 sh 'echo "stash successfully opened"'
@@ -61,8 +45,6 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                unstash 'site_stash'
-                unstash 'nginx_stash'
                 script {
                   if ("$env.BRANCH_NAME" == 'master') {
                     sh 'echo "Deploying maxwellbuck.com..."'
