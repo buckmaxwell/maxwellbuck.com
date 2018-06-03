@@ -10,3 +10,5 @@ RUN apt-get install -y perl
 RUN apt-get install -y git
 RUN apt-get install -y imagemagick
 RUN apt-get install -y vim
+ARG GITHUB_PASS
+ENV GITHUB_PASS=$GITHUB_PASS
