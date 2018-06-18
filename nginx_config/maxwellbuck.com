@@ -45,7 +45,17 @@ server {
       #deny all;
     }
 	}
-
+  
+  location = /downloads/zipcode.db.gz {
+    if ($http_user_agent !~ "^robot/[a-zA-Z0-9]{3,}") {
+      return 455;
+    }
+  }
+  location = /downloads/zipcode.db {
+    if ($http_user_agent !~ "^robot/[a-zA-Z0-9]{3,}") {
+      return 455;
+    }
+  }
   location = /staging/404.html {}
   location = /staging/401.html {}
   location = /staging/455.txt {}
